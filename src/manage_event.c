@@ -47,6 +47,9 @@ void manage_events(game_t *game, object_t *obj)
             obj->moused = 1;
         else
             obj->moused = 0;
+        if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1) {
+            game->screen = 2;
+        }
         move_hero_1(event, obj);
         move_hero_2(event, obj);
     }

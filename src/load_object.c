@@ -33,5 +33,6 @@ object_t *load_object(object_t *obj)
     obj[2] = create_object("pictures/intro2.jpg", (sfVector2f){0, 0});
     obj[3] = create_object("pictures/background.png", (sfVector2f){0, 0});
     obj[4] = create_object("pictures/character.png", (sfVector2f){0, 0});
+    obj[5] = create_object("pictures/pause.png", (sfVector2f){0, 0});
     return (obj);
 }

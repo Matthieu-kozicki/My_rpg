@@ -47,6 +47,9 @@ void game_loop(game_t *game, object_t *obj);
 //manage_event.c
 void manage_events(game_t *game, object_t *obj);
 
+//pause.c
+void pause_menu(game_t *game, object_t *obj);
+
 //load_resource.c
 object_t create_object(const char *path, sfVector2f pos);
 object_t *load_object(object_t *obj);

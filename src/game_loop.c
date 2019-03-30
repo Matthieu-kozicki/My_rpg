@@ -17,7 +17,7 @@ void game_loop(game_t *game, object_t *obj)
         if (game->screen == 1)
             play_game(game, obj);
         if (game->screen == 2)
-            i = i;//pause menu
+            pause_menu(game, obj);
         if (game->screen == 3)
             i = i;//lose screen
         if (game->screen == 0)

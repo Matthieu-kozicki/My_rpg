@@ -13,7 +13,8 @@ SRC	=	src/main.c		\
 		src/load_object.c	\
 		src/animation.c 	\
 		src/manage_event.c	\
-		src/play_game.c
+		src/play_game.c		\
+		src/pause.c
 
 OBJ	=	$(SRC:.c=.o)
 
