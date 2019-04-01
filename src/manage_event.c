@@ -50,6 +50,7 @@ void manage_events(game_t *game, object_t *obj)
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1) {
             game->screen = 2;
         }
+        if (sfKeyboard_isKeyPressed(sfKeyC)) game->screen = 3;
         move_hero_1(event, obj);
         move_hero_2(event, obj);
     }
