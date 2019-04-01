@@ -22,11 +22,11 @@
 typedef struct game_s {
     sfRenderWindow *window;
     sfVector2i mouse;
-    int z;
-    int q;
-    int s;
-    int d;
+    sfView *view;
     int screen;
+    sfClock *clock;
+    sfTime time;
+    float second;
 } game_t;
 
 typedef struct object_s {
@@ -37,6 +37,9 @@ typedef struct object_s {
     int moused;
 } object_t;
 
+//add_functions.c
+void move_rect(sfIntRect *rect, int offset, int max_value);
+
 //init.c
 void load_window(game_t *game);
 void init_game_variables(game_t *game, object_t *obj);
@@ -46,6 +49,9 @@ void game_loop(game_t *game, object_t *obj);
 
 //manage_event.c
 void manage_events(game_t *game, object_t *obj);
+
+//mouve_hero.c
+void move_hero_1(sfEvent event, object_t *obj);
 
 //pause.c
 void pause_menu(game_t *game, object_t *obj);

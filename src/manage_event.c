@@ -7,34 +7,6 @@
 
 #include "my_rpg.h"
 
-void move_hero_1(sfEvent event, object_t *obj)
-{
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyZ) {
-        obj[4].rect.top = 50;
-        obj[4].vector.x = 0;
-        obj[4].vector.y = -1;
-    }
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyQ) {
-        obj[4].rect.top = 100;
-        obj[4].vector.x = -1;
-        obj[4].vector.y = 0;
-    }
-}
-
-void move_hero_2(sfEvent event, object_t *obj)
-{
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyS) {
-        obj[4].rect.top = 0;
-        obj[4].vector.x = 0;
-        obj[4].vector.y = 1;
-    }
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyD) {
-        obj[4].rect.top = 150;
-        obj[4].vector.x = 1;
-        obj[4].vector.y = 0;
-    }
-}
-
 void manage_events(game_t *game, object_t *obj)
 {
     sfEvent event;
@@ -50,8 +22,9 @@ void manage_events(game_t *game, object_t *obj)
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1) {
             game->screen = 2;
         }
-        if (sfKeyboard_isKeyPressed(sfKeyC)) game->screen = 3;
-        move_hero_1(event, obj);
-        move_hero_2(event, obj);
+        if (sfKeyboard_isKeyPressed(sfKeyC))
+            game->screen = 3;
+        if (game->screen == 1)
+            move_hero_1(event, obj);
     }
 }
