@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2019
-** .c
+** play_game.c
 ** File description:
 ** ...
 */
