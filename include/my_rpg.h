@@ -18,6 +18,15 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <math.h>
+#include <time.h>
+
+typedef struct combat_s {
+    sfSprite **player_pkmn;
+    sfSprite **enmy_pkmn;
+    sfSprite **other;
+    sfText **texts;
+    int turn;
+} combat_t;
 
 typedef struct game_s {
     sfRenderWindow *window;
@@ -27,6 +36,7 @@ typedef struct game_s {
     sfClock *clock;
     sfTime time;
     float second;
+    combat_t *combat;
 } game_t;
 
 typedef struct object_s {
@@ -36,6 +46,20 @@ typedef struct object_s {
     sfSprite *spr;
     int moused;
 } object_t;
+
+typedef struct button_s
+{
+    sfRectangleShape *rect;
+    sfFont *font;
+    sfText *text;
+    sfTexture *texture;
+    sfSprite *but;
+    char *but_text;
+}button_t;
+
+//combat.c
+void combat_loop(game_t *game, object_t *obj);
+combat_t *init_combat_sprites(char **player_team, char **enmy_team);
 
 //add_functions.c
 void move_rect(sfIntRect *rect, int offset, int max_value);

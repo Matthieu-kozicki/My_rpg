@@ -22,6 +22,7 @@ void game_loop(game_t *game, object_t *obj)
             i = i;//lose screen
         if (game->screen == 0)
             animation(game, obj);
+        if (game->screen == 4) combat_loop(game, obj);
         sfRenderWindow_display(game->window);
     }
 

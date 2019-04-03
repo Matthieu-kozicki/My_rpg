@@ -60,7 +60,7 @@ int check_pokefile(char *path, char **info)
     int i = 0;
 
     if (stream == NULL) return (84);
-    while(i != 11) {
+    while (i != 11) {
         if (getline(&line, &len, stream) == -1 && i != 11) {
             printf("Error in Pokefile : Missing line(s)\n");
             return (84);

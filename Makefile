@@ -7,16 +7,17 @@
 
 CC	=	gcc
 
-SRC	=	src/main.c		\
-		src/add_functions.c	\
-		src/game_loop.c 	\
-		src/init_game.c 	\
-		src/load_object.c	\
-		src/animation.c 	\
-		src/manage_event.c	\
-		src/play_game.c		\
-		src/combat/combat.c	\
-		src/pause.c		\
+SRC	=	src/main.c				\
+		src/add_functions.c		\
+		src/game_loop.c 		\
+		src/init_game.c 		\
+		src/load_object.c		\
+		src/animation.c 		\
+		src/manage_event.c		\
+		src/play_game.c			\
+		src/combat/combat.c		\
+		src/combat/combatloop.c	\
+		src/pause.c				\
 		src/move_hero.c
 
 OBJ	=	$(SRC:.c=.o)

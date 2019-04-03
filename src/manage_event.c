@@ -22,8 +22,10 @@ void manage_events(game_t *game, object_t *obj)
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1) {
             game->screen = 2;
         }
-        if (sfKeyboard_isKeyPressed(sfKeyC))
-            game->screen = 3;
+        if (sfKeyboard_isKeyPressed(sfKeyC)) {
+            game->screen = 4;
+            game->combat = init_combat_sprites();
+        }
         if (game->screen == 1)
             move_hero_1(event, obj);
     }
