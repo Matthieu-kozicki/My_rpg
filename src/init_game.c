@@ -15,6 +15,7 @@ void load_window(game_t *game)
     (mode, "my_rpg", sfClose, NULL);
     sfRenderWindow_setFramerateLimit(game->window, 60);
     game->view = sfView_createFromRect((sfFloatRect) {0, 0, 192, 152});
+    game->view_2 = sfView_createFromRect((sfFloatRect) {0, 0, 1600, 900});
     sfView_setCenter(game->view, (sfVector2f){25 + 0, 25 + 0});
     game->clock = sfClock_create();
 

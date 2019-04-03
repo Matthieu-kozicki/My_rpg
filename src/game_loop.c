@@ -14,6 +14,8 @@ void game_loop(game_t *game, object_t *obj)
     while (sfRenderWindow_isOpen(game->window)) {
         manage_events(game, obj);
         sfRenderWindow_clear(game->window, sfBlack);
+        if (game->screen != 1)
+            sfRenderWindow_setView (game->window, game->view_2);
         if (game->screen == 1)
             play_game(game, obj);
         if (game->screen == 2)

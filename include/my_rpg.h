@@ -23,6 +23,7 @@ typedef struct game_s {
     sfRenderWindow *window;
     sfVector2i mouse;
     sfView *view;
+    sfView *view_2;
     int screen;
     sfClock *clock;
     sfTime time;
