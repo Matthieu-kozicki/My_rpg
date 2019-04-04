@@ -33,7 +33,7 @@ object_t *load_object(object_t *obj)
     obj[2] = create_object("pictures/intro2.jpg", (sfVector2f){0, 0});
     obj[3] = create_object("pictures/background.png", (sfVector2f){0, 0});
     obj[4] = create_object("pictures/character.png", (sfVector2f){0, 0});
-    obj[5] = create_object("pictures/pause.png", (sfVector2f){0, 0});
+    obj[5] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[6] = create_object("pictures/exit1.png", (sfVector2f){725, 700});
     obj[7] = create_object("pictures/exit2.png", (sfVector2f){725, 700});
     obj[8] = create_object("pictures/exit3.png", (sfVector2f){725, 700});
@@ -49,7 +49,7 @@ object_t *load_object(object_t *obj)
     obj[18] = create_object("pictures/resume1.png", (sfVector2f){725, 300});
     obj[19] = create_object("pictures/resume2.png", (sfVector2f){725, 300});
     obj[20] = create_object("pictures/resume3.png", (sfVector2f){725, 300});
-    obj[21] = create_object("pictures/pause.png", (sfVector2f){0, 0});
+    obj[21] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[22] = create_object("pictures/menu.png", (sfVector2f){0, 0});
     return (obj);
 }
