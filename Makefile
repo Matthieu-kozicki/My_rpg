@@ -12,7 +12,7 @@ SRC	=	src/main.c		\
 		src/game_loop.c 	\
 		src/init_game.c 	\
 		src/load_object.c	\
-		src/animation.c 	\
+		src/menu_start.c 	\
 		src/manage_event.c	\
 		src/play_game.c		\
 		src/combat/combat.c	\

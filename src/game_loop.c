@@ -7,10 +7,19 @@
 
 #include "my_rpg.h"
 
+int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max)
+{
+    if (game->mouse.x <= position.x + x_max
+        && game->mouse.y <= position.y + y_max
+        && game->mouse.x >= position.x
+        && game->mouse.y >= position.y) {
+        return (1);
+    }
+    return (0);
+}
+
 void game_loop(game_t *game, object_t *obj)
 {
-    int i = 0;
-
     while (sfRenderWindow_isOpen(game->window)) {
         manage_events(game, obj);
         sfRenderWindow_clear(game->window, sfBlack);
@@ -21,7 +30,7 @@ void game_loop(game_t *game, object_t *obj)
         if (game->screen == 2)
             pause_menu(game, obj);
         if (game->screen == 3)
-            i = i;//lose screen
+            menu(game, obj);//lose screen
         if (game->screen == 0)
             animation(game, obj);
         sfRenderWindow_display(game->window);
