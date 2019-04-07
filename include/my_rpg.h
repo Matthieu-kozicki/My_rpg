@@ -32,6 +32,7 @@ typedef struct game_s {
     sfRenderWindow *window;
     sfVector2i mouse;
     sfView *view;
+    sfView *view_2;
     int screen;
     sfClock *clock;
     sfTime time;
@@ -44,6 +45,7 @@ typedef struct object_s {
     sfVector2f pos;
     sfIntRect rect;
     sfSprite *spr;
+    int clicked;
     int moused;
 } object_t;
 
@@ -70,6 +72,7 @@ void init_game_variables(game_t *game, object_t *obj);
 
 //game_loop.c
 void game_loop(game_t *game, object_t *obj);
+int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max);
 
 //manage_event.c
 void manage_events(game_t *game, object_t *obj);
@@ -84,7 +87,8 @@ void pause_menu(game_t *game, object_t *obj);
 object_t create_object(const char *path, sfVector2f pos);
 object_t *load_object(object_t *obj);
 
-//animation.c
+//menu.c
+void menu(game_t *game, object_t *obj);
 void animation(game_t *game, object_t *obj);
 
 //test.c

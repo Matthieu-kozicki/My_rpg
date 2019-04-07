@@ -10,7 +10,6 @@
 void destroy_game(game_t *game)
 {
     sfRenderWindow_destroy(game->window);
-    //destroy array of sprite
 }
 
 int help(void)
@@ -21,7 +20,7 @@ int help(void)
 
 int main(int arc, char **arg, char **env)
 {
-    object_t *obj = malloc(sizeof(object_t) * 12); //nbr of sprite
+    object_t *obj = malloc(sizeof(object_t) * 23);
     game_t *game = malloc(sizeof(game_t));
 
     if (arc == 2 && arg[1][0] == '-' && arg[1][1] == 'h' && !arg[1][2])
@@ -35,6 +34,5 @@ int main(int arc, char **arg, char **env)
     init_game_variables(game, obj);
     game_loop(game, obj);
     destroy_game(game);
-    //free struct..
     return (0);
 }
