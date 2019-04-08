@@ -33,6 +33,8 @@ typedef struct game_s {
     sfVector2i mouse;
     sfView *view;
     sfView *view_2;
+    sfMusic *music;
+    float volume;
     int screen;
     sfClock *clock;
     sfTime time;
@@ -86,10 +88,14 @@ void pause_menu(game_t *game, object_t *obj);
 //load_resource.c
 object_t create_object(const char *path, sfVector2f pos);
 object_t *load_object(object_t *obj);
+object_t *load_object2(object_t *obj);
 
 //menu.c
 void menu(game_t *game, object_t *obj);
 void animation(game_t *game, object_t *obj);
+
+//Menu_option.c
+void menu_option(game_t *game, object_t *obj);
 
 //test.c
 void play_game(game_t *game, object_t *obj);

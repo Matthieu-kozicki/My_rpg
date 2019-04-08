@@ -30,10 +30,11 @@ void game_loop(game_t *game, object_t *obj)
         if (game->screen == 2)
             pause_menu(game, obj);
         if (game->screen == 3)
-            menu(game, obj);//lose screen
+            menu(game, obj);
         if (game->screen == 0)
             animation(game, obj);
-        if (game->screen == 4) combat_loop(game, obj);
+        if (game->screen == 5) combat_loop(game, obj);
+        if (game->screen == 4) menu_option(game, obj);
         sfRenderWindow_display(game->window);
     }
 

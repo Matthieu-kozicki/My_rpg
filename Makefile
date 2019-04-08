@@ -18,6 +18,7 @@ SRC	=	src/main.c		\
 		src/combat/combat.c	\
 		src/combat/combatloop.c	\
 		src/pause.c		\
+		src/menu_option.c	\
 		src/move_hero.c
 
 OBJ	=	$(SRC:.c=.o)

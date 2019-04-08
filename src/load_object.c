@@ -46,10 +46,18 @@ object_t *load_object(object_t *obj)
     obj[15] = create_object("pictures/play1.png", (sfVector2f){725, 300});
     obj[16] = create_object("pictures/play2.png", (sfVector2f){725, 300});
     obj[17] = create_object("pictures/play3.png", (sfVector2f){725, 300});
+    return (load_object2(obj));
+}
+
+object_t *load_object2(object_t *obj)
+{
     obj[18] = create_object("pictures/resume1.png", (sfVector2f){725, 300});
     obj[19] = create_object("pictures/resume2.png", (sfVector2f){725, 300});
     obj[20] = create_object("pictures/resume3.png", (sfVector2f){725, 300});
     obj[21] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[22] = create_object("pictures/menu.png", (sfVector2f){0, 0});
+    obj[23] = create_object("pictures/option1.png", (sfVector2f){725, 800});
+    obj[24] = create_object("pictures/option2.png", (sfVector2f){725, 800});
+    obj[25] = create_object("pictures/option3.png", (sfVector2f){725, 800});
     return (obj);
 }

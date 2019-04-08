@@ -7,6 +7,17 @@
 
 #include "my_rpg.h"
 
+void menu2(game_t *game, object_t *obj)
+{
+    if (mouse_is_on(game, (sfVector2f){725, 300}, 160, 80) == 1) {
+        sfRenderWindow_drawSprite(game->window, obj[16].spr, NULL);
+        if (obj->moused == 1)
+            sfRenderWindow_drawSprite(game->window, obj[17].spr, NULL);
+        if (obj->clicked == 1)
+            game->screen = 1;
+    }
+}
+
 void menu(game_t *game, object_t *obj)
 {
     sfRenderWindow_drawSprite(game->window, obj[22].spr, NULL);
@@ -24,16 +35,12 @@ void menu(game_t *game, object_t *obj)
         sfRenderWindow_drawSprite(game->window, obj[13].spr, NULL);
         if (obj->moused == 1)
             sfRenderWindow_drawSprite(game->window, obj[14].spr, NULL);
-        //if (obj->clicked == 1)
-        //show option
+        if (obj->clicked == 1) {
+            game->screen = 4;
+            //sfSleep((sfTime){300000});
+        }
     }
-    if (mouse_is_on(game, (sfVector2f){725, 300}, 160, 80) == 1) {
-        sfRenderWindow_drawSprite(game->window, obj[16].spr, NULL);
-        if (obj->moused == 1)
-            sfRenderWindow_drawSprite(game->window, obj[17].spr, NULL);
-        if (obj->clicked == 1)
-            game->screen = 1;
-    }
+    menu2(game, obj);
 }
 
 void animation(game_t *game, object_t *obj)
