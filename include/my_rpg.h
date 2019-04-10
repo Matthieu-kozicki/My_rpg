@@ -40,6 +40,7 @@ typedef struct game_s {
     sfTime time;
     float second;
     combat_t *combat;
+    char **test;
 } game_t;
 
 typedef struct object_s {
@@ -64,6 +65,8 @@ typedef struct button_s
 //combat.c
 void combat_loop(game_t *game, object_t *obj);
 combat_t *init_combat_sprites(char **player_team, char **enmy_team);
+char **alloc_2d_array(int nb_rows, int nb_cols);
+int check_pokefile(char *path, char **info);
 
 //add_functions.c
 void move_rect(sfIntRect *rect, int offset, int max_value);
