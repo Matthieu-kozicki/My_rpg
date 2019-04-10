@@ -56,7 +56,7 @@ int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max);
 void manage_events(game_t *game, object_t *obj);
 
 //mouve_hero.c
-void move_hero_1(sfEvent event, object_t *obj);
+void move_hero_1(sfEvent event, object_t *obj, game_t *game);
 
 //pause.c
 void pause_menu(game_t *game, object_t *obj);
