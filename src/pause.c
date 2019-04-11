@@ -9,7 +9,7 @@
 
 void pause_menu2(game_t *game, object_t *obj)
 {
-    if (mouse_is_on(game, (sfVector2f){725, 500}, 160, 80) == 1) {
+    if (mouse_is_on(game, (sfVector2f){1025, 700}, 160, 80) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[10].spr, NULL);
         if (obj->moused == 1)
             sfRenderWindow_drawSprite(game->window, obj[11].spr, NULL);
@@ -31,7 +31,7 @@ void pause_menu(game_t *game, object_t *obj)
         if (obj->clicked == 1)
             sfRenderWindow_close(game->window);
     }
-    if (mouse_is_on(game, (sfVector2f){725, 300}, 160, 80) == 1) {
+    if (mouse_is_on(game, (sfVector2f){425, 700}, 160, 80) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[19].spr, NULL);
         if (obj->moused == 1)
             sfRenderWindow_drawSprite(game->window, obj[20].spr, NULL);

@@ -37,9 +37,9 @@ object_t *load_object(object_t *obj)
     obj[6] = create_object("pictures/exit1.png", (sfVector2f){725, 700});
     obj[7] = create_object("pictures/exit2.png", (sfVector2f){725, 700});
     obj[8] = create_object("pictures/exit3.png", (sfVector2f){725, 700});
-    obj[9] = create_object("pictures/menu1.png", (sfVector2f){725, 500});
-    obj[10] = create_object("pictures/menu2.png", (sfVector2f){725, 500});
-    obj[11] = create_object("pictures/menu3.png", (sfVector2f){725, 500});
+    obj[9] = create_object("pictures/menu1.png", (sfVector2f){1025, 700});
+    obj[10] = create_object("pictures/menu2.png", (sfVector2f){1025, 700});
+    obj[11] = create_object("pictures/menu3.png", (sfVector2f){1025, 700});
     obj[12] = create_object("pictures/option1.png", (sfVector2f){725, 500});
     obj[13] = create_object("pictures/option2.png", (sfVector2f){725, 500});
     obj[14] = create_object("pictures/option3.png", (sfVector2f){725, 500});
@@ -51,13 +51,15 @@ object_t *load_object(object_t *obj)
 
 object_t *load_object2(object_t *obj)
 {
-    obj[18] = create_object("pictures/resume1.png", (sfVector2f){725, 300});
-    obj[19] = create_object("pictures/resume2.png", (sfVector2f){725, 300});
-    obj[20] = create_object("pictures/resume3.png", (sfVector2f){725, 300});
+    obj[18] = create_object("pictures/resume1.png", (sfVector2f){425, 700});
+    obj[19] = create_object("pictures/resume2.png", (sfVector2f){425, 700});
+    obj[20] = create_object("pictures/resume3.png", (sfVector2f){425, 700});
     obj[21] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[22] = create_object("pictures/menu.png", (sfVector2f){0, 0});
-    obj[23] = create_object("pictures/option1.png", (sfVector2f){725, 800});
-    obj[24] = create_object("pictures/option2.png", (sfVector2f){725, 800});
-    obj[25] = create_object("pictures/option3.png", (sfVector2f){725, 800});
+    obj[23] = create_object("pictures/back1.png", (sfVector2f){725, 800});
+    obj[24] = create_object("pictures/back2.png", (sfVector2f){725, 800});
+    obj[25] = create_object("pictures/back3.png", (sfVector2f){725, 800});
+    obj[26] = create_object("pictures/option.png", (sfVector2f){0, 0});
+    obj[27] = create_object("pictures/sound.png", (sfVector2f){660, 500});
     return (obj);
 }
