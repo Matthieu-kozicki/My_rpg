@@ -21,11 +21,7 @@
 #include <time.h>
 
 typedef struct combat_s {
-    sfSprite **player_pkmn;
-    sfSprite **enmy_pkmn;
-    sfSprite **other;
     sfText **texts;
-    int turn;
 } combat_t;
 
 typedef struct game_s {
