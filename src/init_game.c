@@ -39,4 +39,9 @@ void init_game_variables(game_t *game, object_t *obj)
     for (int i = 23; i < 26; i++)
         sfSprite_setScale(obj[i].spr,(sfVector2f){2.5, 2.5});
     obj->moused = 0;
+    sfSprite_setScale(obj[27].spr,(sfVector2f){2.5, 2.5});
+    obj[27].rect.height = 25;
+    obj[27].rect.width = 123;
+    obj[27].rect.left = 1230;
+    sfSprite_setTextureRect(obj[27].spr, obj[27].rect);
 }

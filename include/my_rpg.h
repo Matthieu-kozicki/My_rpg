@@ -101,6 +101,11 @@ void animation(game_t *game, object_t *obj);
 //Menu_option.c
 void menu_option(game_t *game, object_t *obj);
 
+//error.c
+int my_strlen(char *str);
+int my_strcomp(char *str, char *dest);
+int check_env(char **env);
+
 //test.c
 void play_game(game_t *game, object_t *obj);
 

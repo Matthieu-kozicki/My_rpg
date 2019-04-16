@@ -15,8 +15,8 @@ long randomiser(long min, long max)
 
 void draw_combat_sprites(sfRenderWindow *window, object_t *obj)
 {
-    sfRenderWindow_drawSprite(window, obj[26].spr, NULL);
-    sfRenderWindow_drawSprite(window, obj[27].spr, NULL);
+    sfRenderWindow_drawSprite(window, obj[28].spr, NULL);
+    sfRenderWindow_drawSprite(window, obj[29].spr, NULL);
 }
 
 void cursor_conditions(game_t *game)
@@ -38,13 +38,13 @@ void cursor_conditions(game_t *game)
 void move_cursor(game_t *game, object_t *obj)
 {
     if (game->cursor_pos == 0)
-        sfSprite_setPosition(obj[27].spr, (sfVector2f){848, 662});
+        sfSprite_setPosition(obj[29].spr, (sfVector2f){848, 662});
     if (game->cursor_pos == 1)
-        sfSprite_setPosition(obj[27].spr, (sfVector2f){1235, 662});
+        sfSprite_setPosition(obj[29].spr, (sfVector2f){1235, 662});
     if (game->cursor_pos == 2)
-        sfSprite_setPosition(obj[27].spr, (sfVector2f){848, 780});
+        sfSprite_setPosition(obj[29].spr, (sfVector2f){848, 780});
     if (game->cursor_pos == 3)
-        sfSprite_setPosition(obj[27].spr, (sfVector2f){1235, 780});
+        sfSprite_setPosition(obj[29].spr, (sfVector2f){1235, 780});
 }
 
 void combat_loop(game_t *game, object_t *obj)
