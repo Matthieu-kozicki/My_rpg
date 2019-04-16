@@ -59,5 +59,7 @@ object_t *load_object2(object_t *obj)
     obj[23] = create_object("pictures/option1.png", (sfVector2f){725, 800});
     obj[24] = create_object("pictures/option2.png", (sfVector2f){725, 800});
     obj[25] = create_object("pictures/option3.png", (sfVector2f){725, 800});
+    obj[26] = create_object("pictures/battle.png", (sfVector2f){0, 0});
+    obj[27] = create_object("pictures/cursor.png", (sfVector2f){848, 662});
     return (obj);
 }

@@ -22,6 +22,7 @@ void manage_events(game_t *game, object_t *obj)
 
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         game->mouse = sfMouse_getPositionRenderWindow(game->window);
+        //printf("x : %d | y : %d\n", game->mouse.x, game->mouse.y);
         if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyDelete))
             sfRenderWindow_close(game->window);
         if (event.type == sfEvtMouseButtonPressed)
@@ -32,10 +33,8 @@ void manage_events(game_t *game, object_t *obj)
         else obj->clicked = 0;
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1)
             game->screen = 2;
-        }
         if (sfKeyboard_isKeyPressed(sfKeyC)) {
             game->screen = 5;
-            game->combat = init_combat_sprites(game->test, game->test);
         }
         if (game->screen == 1)
             move_hero_1(event, obj, game);

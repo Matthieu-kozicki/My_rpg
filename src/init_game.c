@@ -21,12 +21,15 @@ void load_window(game_t *game)
     game->music = sfMusic_createFromFile("sound/music.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
+    //game->test = alloc_2d_array(10, 100);
+    //check_pokefile("src/combat/tortank.pokefile", game->test);
 }
 
 void init_game_variables(game_t *game, object_t *obj)
 {
     game->volume = 100;
     game->screen = 0;
+    game->cursor_pos = 0;
     sfSprite_setOrigin(obj[0].spr,(sfVector2f){416, 293});
     sfSprite_setOrigin(obj[1].spr,(sfVector2f){416, 293});
     sfSprite_setScale(obj[0].spr,(sfVector2f){0.5, 0.5});

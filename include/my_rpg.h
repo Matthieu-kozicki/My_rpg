@@ -41,6 +41,7 @@ typedef struct game_s {
     float second;
     combat_t *combat;
     char **test;
+    int cursor_pos;
 } game_t;
 
 typedef struct object_s {
