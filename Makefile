@@ -5,7 +5,7 @@
 ## Makefile
 ##
 
-CC	=	gcc
+NAME	=	my_rpg
 
 SRC	=	src/main.c		\
 		src/add_functions.c	\
@@ -21,26 +21,31 @@ SRC	=	src/main.c		\
 		src/menu_option.c	\
 		src/move_hero.c		\
 		src/error/error.c	\
+		src/array/array.c	\
+		src/array/manag_map.c
 
 OBJ	=	$(SRC:.c=.o)
 
-NAME	=	my_rpg
+CFLAGS	=	-Wall -Wextra
 
-CFLAGS	=	-I./include -Wall -Wextra -g3
+CPPFLAGS =	-I./include
 
 LDLIB	=	-lcsfml-window -lcsfml-graphics -lcsfml-system -lcsfml-audio -lm
 
 all:		$(NAME)
 
 $(NAME):	$(OBJ)
-		gcc $(OBJ) -o $(NAME) $(LDLIB)
+		gcc -o $(NAME) $(OBJ) $(LDLIB)
+
+debug:		CFLAGS += -g3
+debug:		re
 
 clean:
 		rm -f $(OBJ)
 
 fclean:		clean
-		rm -f $(NAME)
+		rm -f $(NAME) rm -f *~  rm *#
 
 re:		fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all debug clean fclean re

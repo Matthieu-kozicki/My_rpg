@@ -30,6 +30,7 @@ void init_game_variables(game_t *game, object_t *obj)
     game->volume = 100;
     game->screen = 0;
     game->cursor_pos = 0;
+    game->tab = map(5051, game->tab);
     sfSprite_setOrigin(obj[0].spr,(sfVector2f){416, 293});
     sfSprite_setOrigin(obj[1].spr,(sfVector2f){416, 293});
     sfSprite_setScale(obj[0].spr,(sfVector2f){0.5, 0.5});

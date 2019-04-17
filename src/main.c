@@ -9,6 +9,7 @@
 
 void destroy_game(game_t *game)
 {
+    free_array(102, game->tab);
     sfRenderWindow_destroy(game->window);
     sfMusic_destroy(game->music);
 }
