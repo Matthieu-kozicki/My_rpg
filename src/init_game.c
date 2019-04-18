@@ -18,6 +18,7 @@ void load_window(game_t *game)
     game->view_2 = sfView_createFromRect((sfFloatRect) {0, 0, 1600, 900});
     sfView_setCenter(game->view, (sfVector2f){25 + 111, 25 + 95});
     game->clock = sfClock_create();
+    game->clock_2 = sfClock_create();
     game->music = sfMusic_createFromFile("sound/music.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);

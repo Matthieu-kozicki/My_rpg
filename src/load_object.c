@@ -32,7 +32,7 @@ object_t *load_object(object_t *obj)
     obj[1] = create_object("pictures/logo.png", (sfVector2f){1750, 280});
     obj[2] = create_object("pictures/intro2.jpg", (sfVector2f){0, 0});
     obj[3] = create_object("pictures/background_B.png", (sfVector2f){0, 0});
-    obj[4] = create_object("pictures/character.png", (sfVector2f){111, 95});
+    obj[4] = create_object("pictures/character.png", (sfVector2f){111, 94});
     obj[5] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[6] = create_object("pictures/exit1.png", (sfVector2f){725, 700});
     obj[7] = create_object("pictures/exit2.png", (sfVector2f){725, 700});

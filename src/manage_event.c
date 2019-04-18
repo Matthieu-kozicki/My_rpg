@@ -16,6 +16,20 @@ char ***alloc_3d_array(int nb, int rows, int cols)
     return (a);
 }
 
+void manage_events_2(game_t *game, object_t *obj, sfEvent event)
+{
+    if (sfKeyboard_isKeyPressed(sfKeyC))
+        game->screen = 5;
+    if (game->screen == 1) {
+        game->time_2 = sfClock_getElapsedTime(game->clock_2);
+        game->second_2 = game->time_2.microseconds / 50000;
+        if (game->second_2 > 1) {
+            move_hero_1(event, obj, game);
+            sfClock_restart(game->clock_2);
+        }
+    }
+}
+
 void manage_events(game_t *game, object_t *obj)
 {
     sfEvent event;
@@ -33,10 +47,6 @@ void manage_events(game_t *game, object_t *obj)
         else obj->clicked = 0;
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1)
             game->screen = 2;
-        if (sfKeyboard_isKeyPressed(sfKeyC)) {
-            game->screen = 5;
-        }
-        if (game->screen == 1)
-            move_hero_1(event, obj, game);
+        manage_events_2(game, obj, event);
     }
 }

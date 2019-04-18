@@ -41,6 +41,9 @@ typedef struct game_s {
     sfClock *clock;
     sfTime time;
     float second;
+    sfClock *clock_2;
+    sfTime time_2;
+    float second_2;
     combat_t *combat;
     char **test;
     int cursor_pos;

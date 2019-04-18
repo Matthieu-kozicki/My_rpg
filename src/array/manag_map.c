@@ -15,7 +15,7 @@ int check_pos(game_t *game)
     game->pos_x = 0;
     game->pos_y = 0;
     while (game->tab[j][i] != 'P') {
-        for (i = i; game->tab[j][i] != '\0'; i = i + 1) {
+        for (; i < 50; i = i + 1) {
             if (game->tab[j][i] == 'P') {
                 game->pos_x = i;
                 game->pos_y = j;
