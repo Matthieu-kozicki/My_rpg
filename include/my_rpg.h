@@ -45,6 +45,9 @@ typedef struct game_s {
     char **test;
     int cursor_pos;
     char **tab;
+    int pos_x;
+    int pos_y;
+    char stock;
 } game_t;
 
 typedef struct object_s {
@@ -99,12 +102,12 @@ int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max);
 object_t create_object(const char *path, sfVector2f pos);
 object_t *load_object(object_t *obj);
 object_t *load_object2(object_t *obj);
-/*
+
 //manag_map.c
-int check_pos(char **tab, pos_t *pos);
-int test_block(int space_y, int space_x, pos_t *pos, char **tab);
-char last_pos(char c, int space_y, int space_x, pos_t *pos, char **tab);
-*/
+int check_pos(game_t *game);
+int test_block(int space_y, int space_x, game_t *game);
+char last_pos(char c, int space_y, int space_x, game_t *game);
+
 //manage_event.c
 void manage_events(game_t *game, object_t *obj);
 
