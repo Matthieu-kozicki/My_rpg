@@ -22,7 +22,8 @@ SRC	=	src/main.c		\
 		src/move_hero.c		\
 		src/error/error.c	\
 		src/array/array.c	\
-		src/array/manag_map.c
+		src/array/manag_map.c	\
+		src/keybind/keybinding.c
 
 OBJ	=	$(SRC:.c=.o)
 
