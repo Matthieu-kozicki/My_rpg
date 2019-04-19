@@ -17,6 +17,7 @@ SRC	=	src/main.c		\
 		src/play_game.c		\
 		src/combat/combat.c	\
 		src/combat/combatloop.c	\
+		src/combat/init_combat.c	\
 		src/pause.c		\
 		src/menu_option.c	\
 		src/move_hero.c		\

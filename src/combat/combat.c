@@ -12,16 +12,24 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include <string.h>
+#include "my_rpg.h"
 
-char **alloc_2d_array(int nb_rows, int nb_cols)
+char *my_strdup(char const *src)
 {
-    char **a = malloc(sizeof(char *) * nb_rows);
+    int str_len = my_strlen(src);
+    int i = 0;
+    char *duplicate = malloc(sizeof(char) * (str_len + 1));
 
-    for (int y = 0;y < nb_rows;y = y + 1) {
-        a[y] = malloc(sizeof(char) * nb_cols + 1);
-        a[y][nb_cols] = '\0';
+    while (src[i] != '\0') {
+        if (src[i] == '\n') {
+            duplicate[i] = '\0';
+            return (duplicate);
+        }
+        duplicate[i] = src[i];
+        i = i + 1;
     }
-    return (a);
+    duplicate[str_len] = '\0';
+    return (duplicate);
 }
 
 int cmp_str(char *str1, char *str2, int n)
@@ -35,24 +43,22 @@ int cmp_str(char *str1, char *str2, int n)
     return (1);
 }
 
-int checker(int index, char *line, char **info)
+int checker(int index, char *line, poke_t *poke)
 {
-    static int i = 0;
-
-    if (index == 0 && (cmp_str("[START]", line, 7) != 1)) {
-        printf("Error at line %d\n", index);
-        return (84);
-    }
-    if (index == 10 && (cmp_str("[END]", line, 5) != 1)) {
-        printf("Error at line %d\n", index);
-        return (84);
-    }
-    info[i] = strdup(line);
-    i++;
+    if (index == 0 && (cmp_str("[START]", line, 7) != 1)) return (84);
+    if (index == 1) poke->info[0] = my_strdup(line);
+    if (index == 2) poke->info[1] = my_strdup(line);
+    if (index == 3) poke->info[2] = my_strdup(line);
+    if (index == 4) poke->info[3] = my_strdup(line);
+    if (index == 5) poke->stats[0] = atoi(line);
+    if (index == 6) poke->stats[1] = atoi(line);
+    if (index == 7) poke->stats[2] = atoi(line);
+    if (index == 8) poke->stats[3] = atoi(line);
+    if (index == 9 && (cmp_str("[END]", line, 5) != 1)) return (84);
     return (0);
 }
 
-int check_pokefile(char *path, char **info)
+int check_pokefile(char *path, poke_t *poke)
 {
     FILE *stream = fopen(path, "r");
     char *line = NULL;
@@ -60,15 +66,11 @@ int check_pokefile(char *path, char **info)
     int i = 0;
 
     if (stream == NULL) return (84);
-    while (i != 11) {
-        if (getline(&line, &len, stream) == -1 && i != 11) {
-            printf("Error in Pokefile : Missing line(s)\n");
+    while (i != 10) {
+        if (getline(&line, &len, stream) == -1 && i != 10)
             return (84);
-        }
-        if (checker(i, line, info) == 84) return (84);
+        if (checker(i, line, poke) == 84) return (84);
         i++;
     }
-    free(info[9]);
-    info[9] = NULL;
     return (0);
 }
