@@ -36,6 +36,7 @@ void game_loop(game_t *game, object_t *obj)
             animation(game, obj);
         if (game->screen == 5) combat_loop(game, obj);
         if (game->screen == 4) menu_option(game, obj);
+        if (game->screen == 6) inventory(game, obj);
         sfRenderWindow_display(game->window);
     }
 }

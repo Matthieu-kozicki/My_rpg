@@ -23,7 +23,8 @@ SRC	=	src/main.c		\
 		src/error/error.c	\
 		src/array/array.c	\
 		src/array/manag_map.c	\
-		src/keybind/keybinding.c
+		src/keybind/keybinding.c\
+		src/inventory.c
 
 OBJ	=	$(SRC:.c=.o)
 

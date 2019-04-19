@@ -130,6 +130,9 @@ void menu_option(game_t *game, object_t *obj);
 //pause.c
 void pause_menu(game_t *game, object_t *obj);
 
+//inventory.c
+void inventory(game_t *game, object_t *obj);
+
 //play_game.c
 void play_game(game_t *game, object_t *obj);
 

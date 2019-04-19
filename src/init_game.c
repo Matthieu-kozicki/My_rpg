@@ -26,9 +26,14 @@ void load_window(game_t *game)
     //check_pokefile("src/combat/tortank.pokefile", game->test);
 }
 
-void init_game_variables(game_t *game, object_t *obj)
+void init_game_variables2(game_t *game, object_t *obj)
 {
     game->volume = 100;
+    sfSprite_setScale(obj[35].spr,(sfVector2f){0.45, 0.45});
+}
+
+void init_game_variables(game_t *game, object_t *obj)
+{
     game->screen = 0;
     game->cursor_pos = 0;
     game->tab = map(5051, game->tab);
@@ -48,4 +53,5 @@ void init_game_variables(game_t *game, object_t *obj)
     sfSprite_setTextureRect(obj[27].spr, obj[27].rect);
     sfSprite_setScale(obj[31].spr,(sfVector2f){0.1, 0.1});
     sfSprite_setScale(obj[30].spr,(sfVector2f){0.45, 0.45});
+    init_game_variables2(game, obj);
 }
