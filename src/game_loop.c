@@ -22,6 +22,7 @@ void game_loop(game_t *game, object_t *obj)
 {
     while (sfRenderWindow_isOpen(game->window)) {
         check_pos(game);
+        manage_clock(game->combat);
         manage_events(game, obj);
         sfRenderWindow_clear(game->window, sfBlack);
         if (game->screen != 1)

@@ -22,8 +22,8 @@ void load_window(game_t *game)
     game->music = sfMusic_createFromFile("sound/music.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
-    //game->test = alloc_2d_array(10, 100);
-    //check_pokefile("src/combat/tortank.pokefile", game->test);
+    game->combat = malloc(sizeof(combat_t));
+    init_combat(game->combat);
 }
 
 void init_game_variables2(game_t *game, object_t *obj)

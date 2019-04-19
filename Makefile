@@ -25,11 +25,13 @@ SRC	=	src/main.c		\
 		src/array/array.c	\
 		src/array/manag_map.c	\
 		src/keybind/keybinding.c\
+		src/putinstr.c		\
+		src/clocks.c		\
 		src/inventory.c
 
 OBJ	=	$(SRC:.c=.o)
 
-CFLAGS	=	-Wall -Wextra
+CFLAGS	=	-Wall -Wextra -g3
 
 CPPFLAGS =	-I./include
 

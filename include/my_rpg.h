@@ -26,8 +26,33 @@
 #include <math.h>
 #include <time.h>
 
+enum stats {
+    TYPE = 0,
+    HP,
+    ATK,
+    DEF,
+};
+
+enum info {
+    NAME = 0,
+    ATK_NAME,
+    PATH_TO_SPRITE,
+    PATH_TO_ATK
+};
+
+typedef struct poke_s {
+    int stats[4];
+    char *info[4];
+} poke_t;
+
 typedef struct combat_s {
-    sfText **texts;
+    sfSprite *spr[2];
+    sfText *texts[4];
+    sfFont *font;
+    sfClock *clock[2];
+    sfTime time[2];
+    poke_t poke[2];
+    float seconds[2];
 } combat_t;
 
 typedef struct game_s {
@@ -86,7 +111,19 @@ void display_array(int y, char **tab);
 void combat_loop(game_t *game, object_t *obj);
 combat_t *init_combat_sprites(char **player_team, char **enmy_team);
 char **alloc_2d_array(int nb_rows, int nb_cols);
-int check_pokefile(char *path, char **info);
+int check_pokefile(char *path, poke_t *poke);
+void init_combat(combat_t *combat);
+void load_poke_sprites(combat_t *combat);
+
+//keybinding.c
+void keybinding(game_t *game, object_t *obj);
+
+//clocks.c
+void manage_clock(combat_t *combat);
+
+//putinstr.c
+char *intstr(int nb, int digits);
+long long my_digits(int nb);
 
 //error.c
 int my_strlen(char *str);
@@ -96,9 +133,6 @@ int check_env(char **env);
 //init.c
 void load_window(game_t *game);
 void init_game_variables(game_t *game, object_t *obj);
-
-//keybinding.c
-void keybinding(game_t *game, object_t *obj);
 
 //game_loop.c
 void game_loop(game_t *game, object_t *obj);
@@ -129,9 +163,6 @@ void menu_option(game_t *game, object_t *obj);
 
 //pause.c
 void pause_menu(game_t *game, object_t *obj);
-
-//inventory.c
-void inventory(game_t *game, object_t *obj);
 
 //play_game.c
 void play_game(game_t *game, object_t *obj);
