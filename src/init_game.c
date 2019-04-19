@@ -16,8 +16,9 @@ void load_window(game_t *game)
     sfRenderWindow_setFramerateLimit(game->window, 60);
     game->view = sfView_createFromRect((sfFloatRect) {0, 0, 192, 152});
     game->view_2 = sfView_createFromRect((sfFloatRect) {0, 0, 1600, 900});
-    sfView_setCenter(game->view, (sfVector2f){25 + 0, 25 + 0});
+    sfView_setCenter(game->view, (sfVector2f){25 + 111, 25 + 95});
     game->clock = sfClock_create();
+    game->clock_2 = sfClock_create();
     game->music = sfMusic_createFromFile("sound/music.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
@@ -25,11 +26,17 @@ void load_window(game_t *game)
     //check_pokefile("src/combat/tortank.pokefile", game->test);
 }
 
-void init_game_variables(game_t *game, object_t *obj)
+void init_game_variables2(game_t *game, object_t *obj)
 {
     game->volume = 100;
+    sfSprite_setScale(obj[35].spr,(sfVector2f){0.45, 0.45});
+}
+
+void init_game_variables(game_t *game, object_t *obj)
+{
     game->screen = 0;
     game->cursor_pos = 0;
+    game->tab = map(5051, game->tab);
     sfSprite_setOrigin(obj[0].spr,(sfVector2f){416, 293});
     sfSprite_setOrigin(obj[1].spr,(sfVector2f){416, 293});
     sfSprite_setScale(obj[0].spr,(sfVector2f){0.5, 0.5});
@@ -44,4 +51,7 @@ void init_game_variables(game_t *game, object_t *obj)
     obj[27].rect.width = 123;
     obj[27].rect.left = 1230;
     sfSprite_setTextureRect(obj[27].spr, obj[27].rect);
+    sfSprite_setScale(obj[31].spr,(sfVector2f){0.1, 0.1});
+    sfSprite_setScale(obj[30].spr,(sfVector2f){0.45, 0.45});
+    init_game_variables2(game, obj);
 }

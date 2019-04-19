@@ -21,6 +21,7 @@ int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max)
 void game_loop(game_t *game, object_t *obj)
 {
     while (sfRenderWindow_isOpen(game->window)) {
+        check_pos(game);
         manage_events(game, obj);
         sfRenderWindow_clear(game->window, sfBlack);
         if (game->screen != 1)
@@ -35,7 +36,7 @@ void game_loop(game_t *game, object_t *obj)
             animation(game, obj);
         if (game->screen == 5) combat_loop(game, obj);
         if (game->screen == 4) menu_option(game, obj);
+        if (game->screen == 6) inventory(game, obj);
         sfRenderWindow_display(game->window);
     }
-
 }
