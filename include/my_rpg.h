@@ -143,6 +143,9 @@ object_t create_object(const char *path, sfVector2f pos);
 object_t *load_object(object_t *obj);
 object_t *load_object2(object_t *obj);
 
+//inventory.c
+void inventory(game_t *game, object_t *obj);
+
 //manag_map.c
 int check_pos(game_t *game);
 int test_block(int space_y, int space_x, game_t *game);
