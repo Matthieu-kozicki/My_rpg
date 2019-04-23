@@ -30,6 +30,7 @@ void init_game_variables2(game_t *game, object_t *obj)
 {
     game->volume = 100;
     sfSprite_setScale(obj[35].spr,(sfVector2f){0.45, 0.45});
+    sfSprite_setScale(obj[36].spr,(sfVector2f){0.07, 0.07});
 }
 
 void init_game_variables(game_t *game, object_t *obj)
