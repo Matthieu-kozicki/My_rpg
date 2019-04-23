@@ -16,7 +16,12 @@ void destroy_game(game_t *game)
 
 int help(void)
 {
-    write(1,"A RPG game created with CSFML.\n\n",32);
+    write(1,"A RPG game created with CSFML.\n\n\n",33);
+    write(1,"Z on keyboard : to move foreward\n",33);
+    write(1,"S on keyboard : to move backward\n",33);
+    write(1,"Q on keyboard : to move on the left\n",36);
+    write(1,"D on keyboard : to move on the right\n",37);
+    write(1,"I on keyboard : to open the inventory\n",38);
     return (0);
 }
 
