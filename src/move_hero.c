@@ -16,6 +16,7 @@ void move_hero_2(sfEvent event, object_t *obj, game_t *game)
             sfSprite_move(obj[31].spr, (sfVector2f){0, 16});
             sfSprite_move(obj[36].spr, (sfVector2f){0, 16});
             sfView_move (game->view, (sfVector2f){0, 16});
+            move_rect(&obj[4].rect, 50, 200);
             game->tab[game->pos_y][game->pos_x] = game->stock;
             game->stock = last_pos(game->stock, 1, 0, game);
             game->tab[game->pos_y + 1][game->pos_x] = 'P';
@@ -28,6 +29,7 @@ void move_hero_2(sfEvent event, object_t *obj, game_t *game)
             sfSprite_move(obj[31].spr, (sfVector2f){16, 0});
             sfSprite_move(obj[36].spr, (sfVector2f){16, 0});
             sfView_move (game->view, (sfVector2f){16, 0});
+            move_rect(&obj[4].rect, 50, 200);
             game->tab[game->pos_y][game->pos_x] = game->stock;
             game->stock = last_pos(game->stock, 0, 1, game);
             game->tab[game->pos_y][game->pos_x + 1] = 'P';
@@ -44,6 +46,7 @@ void move_hero_1(sfEvent event, object_t *obj, game_t *game)
             sfSprite_move(obj[31].spr, (sfVector2f){0, -16});
             sfSprite_move(obj[36].spr, (sfVector2f){0, -16});
             sfView_move (game->view, (sfVector2f){0, -16});
+            move_rect(&obj[4].rect, 50, 200);
             game->tab[game->pos_y][game->pos_x] = game->stock;
             game->stock = last_pos(game->stock, -1, 0, game);
             game->tab[game->pos_y - 1][game->pos_x] = 'P';
@@ -56,6 +59,7 @@ void move_hero_1(sfEvent event, object_t *obj, game_t *game)
             sfSprite_move(obj[31].spr, (sfVector2f){-16, 0});
             sfSprite_move(obj[36].spr, (sfVector2f){-16, 0});
             sfView_move (game->view, (sfVector2f){-16, 0});
+            move_rect(&obj[4].rect, 50, 200);
             game->tab[game->pos_y][game->pos_x] = game->stock;
             game->stock = last_pos(game->stock, 0, -1, game);
             game->tab[game->pos_y][game->pos_x - 1] = 'P';

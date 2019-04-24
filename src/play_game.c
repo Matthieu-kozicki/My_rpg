@@ -12,7 +12,7 @@ void play_game(game_t *game, object_t *obj)
     game->time = sfClock_getElapsedTime(game->clock);
     game->second = game->time.microseconds / 100000;
     if (game->second > 1) {
-        move_rect(&obj[4].rect, 50, 200);
+        //move_rect(&obj[4].rect, 50, 200);
         sfClock_restart(game->clock);
     }
     sfRenderWindow_drawSprite(game->window, obj[3].spr, NULL);
