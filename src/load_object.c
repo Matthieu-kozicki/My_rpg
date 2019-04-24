@@ -69,6 +69,6 @@ object_t *load_object2(object_t *obj)
     obj[33] = create_object("pictures/3d_effect.png", (sfVector2f){0, 0});
     obj[34] = create_object("pictures/inventory.png", (sfVector2f){0, 0});
     obj[35] = create_object("pictures/leave.png", (sfVector2f){1472, 5});
-    obj[36] = create_object("pictures/quest.png", (sfVector2f){180, 50});
+    obj[36] = create_object("pictures/quest.png", (sfVector2f){207, 80});
     return (obj);
 }
