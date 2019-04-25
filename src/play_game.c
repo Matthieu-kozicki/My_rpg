@@ -24,4 +24,6 @@ void play_game(game_t *game, object_t *obj)
     sfSprite_setTextureRect(obj[4].spr, obj[4].rect);
     if (sfKeyboard_isKeyPressed(sfKeyI))
         game->screen = 6;
+    if (sfKeyboard_isKeyPressed(sfKeyP))
+        quest(game, obj);
 }

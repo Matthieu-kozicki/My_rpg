@@ -14,7 +14,7 @@
 #include <string.h>
 #include "my_rpg.h"
 
-char *my_strdup(char const *src)
+char *my_strdup(char *src)
 {
     int str_len = my_strlen(src);
     int i = 0;

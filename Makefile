@@ -7,27 +7,28 @@
 
 NAME	=	my_rpg
 
-SRC	=	src/main.c		\
-		src/add_functions.c	\
-		src/game_loop.c 	\
-		src/init_game.c 	\
-		src/load_object.c	\
-		src/menu_start.c 	\
-		src/manage_event.c	\
-		src/play_game.c		\
-		src/combat/combat.c	\
-		src/combat/combatloop.c	\
+SRC	=	src/main.c			\
+		src/add_functions.c		\
+		src/game_loop.c 		\
+		src/init_game.c 		\
+		src/load_object.c		\
+		src/menu_start.c 		\
+		src/manage_event.c		\
+		src/play_game.c			\
+		src/combat/combat.c		\
+		src/combat/combatloop.c		\
 		src/combat/init_combat.c	\
-		src/pause.c		\
-		src/menu_option.c	\
-		src/move_hero.c		\
-		src/error/error.c	\
-		src/array/array.c	\
-		src/array/manag_map.c	\
-		src/keybind/keybinding.c\
-		src/putinstr.c		\
-		src/clocks.c		\
-		src/inventory.c
+		src/pause.c			\
+		src/menu_option.c		\
+		src/move_hero.c			\
+		src/error/error.c		\
+		src/array/array.c		\
+		src/array/manag_map.c		\
+		src/keybind/keybinding.c	\
+		src/putinstr.c			\
+		src/clocks.c			\
+		src/inventory.c			\
+		src/quest/quest.c
 
 OBJ	=	$(SRC:.c=.o)
 
