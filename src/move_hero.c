@@ -14,6 +14,7 @@ void move_ui(object_t *obj, sfVector2f vector, game_t *game)
     sfSprite_move(obj[36].spr, vector);
     sfSprite_move(obj[37].spr, vector);
     sfSprite_move(obj[38].spr, vector);
+    sfSprite_move(obj[39].spr, vector);
     sfView_move (game->view, vector);
     move_rect(&obj[4].rect, 50, 200);
 }

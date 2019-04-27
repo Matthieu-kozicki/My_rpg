@@ -29,4 +29,7 @@ void play_game(game_t *game, object_t *obj)
     if (game->pos_x == 27 && game->pos_y == 94
         && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 1)
         obj->quest = 2;
+    if (game->pos_x == 19 && game->pos_y == 47
+        && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 2)
+        obj->quest = 3;
 }
