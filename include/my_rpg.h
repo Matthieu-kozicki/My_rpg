@@ -25,6 +25,8 @@
 #include <fcntl.h>
 #include <math.h>
 #include <time.h>
+#include <sys/types.h>
+#include <dirent.h>
 
 enum stats {
     TYPE = 0,
@@ -43,7 +45,7 @@ enum info {
 typedef struct poke_s {
     int stats[5];
     char *info[4];
-    poke_t *next;
+    struct poke_s *next;
 } poke_t;
 
 typedef struct combat_s {
@@ -53,6 +55,7 @@ typedef struct combat_s {
     sfClock *clock[2];
     sfTime time[2];
     poke_t poke[2];
+    poke_t *list;
     float seconds[2];
 } combat_t;
 
@@ -101,6 +104,7 @@ typedef struct button_s
 
 //add_functions.c
 void move_rect(sfIntRect *rect, int offset, int max_value);
+char *my_strcat(char *dest, char const *src);
 
 //array.c
 char **make_array(int x, int y);
