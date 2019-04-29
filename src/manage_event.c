@@ -6,6 +6,21 @@
 */
 
 #include "my_rpg.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+static void manage_events_3(game_t *game, object_t *obj, sfEvent event)
+{
+    int n = 0;
+
+    srand(time(NULL));
+    if(game->stock == 'B' && event.type == sfEvtKeyPressed && obj->quest >= 2) {
+        n = rand() %  100;
+        if (n > 90)
+            printf("%s\n", "FIGHT");
+    }
+}
 
 void manage_events_2(game_t *game, object_t *obj, sfEvent event)
 {
@@ -43,5 +58,6 @@ void manage_events(game_t *game, object_t *obj)
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1)
             game->screen = 2;
         manage_events_2(game, obj, event);
+        manage_events_3(game, obj, event);
     }
 }

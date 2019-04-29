@@ -86,6 +86,7 @@ typedef struct object_s {
     sfSprite *spr;
     int clicked;
     int moused;
+    int quest;
 } object_t;
 
 typedef struct button_s
@@ -135,6 +136,9 @@ int check_env(char **env);
 void load_window(game_t *game);
 void init_game_variables(game_t *game, object_t *obj);
 
+//quest.c
+void quest(game_t *game, object_t *obj);
+
 //game_loop.c
 void game_loop(game_t *game, object_t *obj);
 int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max);
@@ -143,6 +147,7 @@ int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max);
 object_t create_object(const char *path, sfVector2f pos);
 object_t *load_object(object_t *obj);
 object_t *load_object2(object_t *obj);
+object_t *load_object3(object_t *obj);
 
 //inventory.c
 void inventory(game_t *game, object_t *obj);
