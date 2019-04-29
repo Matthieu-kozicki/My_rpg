@@ -41,8 +41,9 @@ enum info {
 };
 
 typedef struct poke_s {
-    int stats[4];
+    int stats[5];
     char *info[4];
+    poke_t *next;
 } poke_t;
 
 typedef struct combat_s {
