@@ -79,5 +79,6 @@ object_t *load_object3(object_t *obj)
     obj[37] = create_object("pictures/quest1.png", (sfVector2f){42, 50});
     obj[38] = create_object("pictures/quest2.png", (sfVector2f){42, 50});
     obj[39] = create_object("pictures/quest3.png", (sfVector2f){42, 50});
+    obj[40] = create_object("pictures/text.png", (sfVector2f){345, 1518});
     return (obj);
 }
