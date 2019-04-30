@@ -38,6 +38,7 @@ int main(int arc, char **arg, char **env)
     }
     if (check_env(env) == 0)
         return (84);
+    srand(time(NULL));
     load_window(game);
     obj = load_object(obj);
     init_game_variables(game, obj);
