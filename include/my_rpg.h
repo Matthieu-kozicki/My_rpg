@@ -153,6 +153,7 @@ void init_game_variables(game_t *game, object_t *obj);
 
 //quest.c
 void quest(game_t *game, object_t *obj);
+void dialogue(game_t *game, object_t *obj);
 
 //game_loop.c
 void game_loop(game_t *game, object_t *obj);

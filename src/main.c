@@ -27,7 +27,7 @@ int help(void)
 
 int main(int arc, char **arg, char **env)
 {
-    object_t *obj = malloc(sizeof(object_t) * 40);
+    object_t *obj = malloc(sizeof(object_t) * 42);
     game_t *game = malloc(sizeof(game_t));
 
     if (arc == 2 && arg[1][0] == '-' && arg[1][1] == 'h' && !arg[1][2])
