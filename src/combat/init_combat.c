@@ -29,6 +29,11 @@ void init_combat(combat_t *combat)
     init_text(combat->font, "HP_ENNEMY", (sfVector2f){204, 29}, combat->texts[1]);
     init_text(combat->font, "PLAYER", (sfVector2f){982, 461}, combat->texts[2]);
     init_text(combat->font, "ENNEMY", (sfVector2f){95, 85}, combat->texts[3]);
+    combat->list = malloc(sizeof(poke_t));
+    combat->list->spr = malloc(sizeof(object_t));
+    combat->list->next = NULL;
+    if (poke_init(combat->list) != 0) printf("Err loading poke\n");
+    create_spr_list(combat->list);
 }
 
 void load_poke_sprites(combat_t *combat)

@@ -42,9 +42,20 @@ enum info {
     PATH_TO_ATK
 };
 
+typedef struct object_s {
+    sfVector2f vector;
+    sfVector2f pos;
+    sfIntRect rect;
+    sfSprite *spr;
+    int clicked;
+    int moused;
+    int quest;
+} object_t;
+
 typedef struct poke_s {
     int stats[5];
     char *info[4];
+    object_t *spr;
     struct poke_s *next;
 } poke_t;
 
@@ -82,16 +93,6 @@ typedef struct game_s {
     char stock;
 } game_t;
 
-typedef struct object_s {
-    sfVector2f vector;
-    sfVector2f pos;
-    sfIntRect rect;
-    sfSprite *spr;
-    int clicked;
-    int moused;
-    int quest;
-} object_t;
-
 typedef struct button_s
 {
     sfRectangleShape *rect;
@@ -120,6 +121,12 @@ char **alloc_2d_array(int nb_rows, int nb_cols);
 int check_pokefile(char *path, poke_t *poke);
 void init_combat(combat_t *combat);
 void load_poke_sprites(combat_t *combat);
+int poke_init(poke_t *list);
+
+//list.c
+poke_t *add_to_list(poke_t *list);
+void print_list(poke_t *list);
+void create_spr_list(poke_t *list);
 
 //keybinding.c
 void keybinding(game_t *game, object_t *obj);

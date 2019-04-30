@@ -1,8 +1,8 @@
 /*
-** EPITECH PROJECT, 2018
-** INSERT NAME
+** EPITECH PROJECT, 2019
+** MUL_my_rpg_2018
 ** File description:
-** INSERT DESCRIPTION
+** combat
 */
 
 #include <stdio.h>
@@ -72,6 +72,31 @@ int check_pokefile(char *path, poke_t *poke)
             return (84);
         if (checker(i, line, poke) == 84) return (84);
         i++;
+    }
+    return (0);
+}
+
+int poke_init(poke_t *list)
+{
+    DIR *dir = opendir("pokemons");
+    struct dirent *tmp;
+    int rv = 0;
+    char *name;
+
+    if (dir == NULL) return (84);
+    tmp = readdir(dir);
+    if (tmp == NULL) return (84);
+    while (tmp != NULL) {
+        if (tmp->d_name[0] != '.') {
+            name = malloc(sizeof(char) * 10 + 256);
+            name[0] = '\0';
+            name = my_strcat(name, "pokemons/");
+            name = my_strcat(name, tmp->d_name);
+            rv = check_pokefile(name, add_to_list(list));
+            free(name);
+        }
+        if (rv != 0) return (84);
+        tmp = readdir(dir);
     }
     return (0);
 }

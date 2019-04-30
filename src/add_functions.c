@@ -13,3 +13,16 @@ void move_rect(sfIntRect *rect, int offset, int max_value)
     if (rect->left >= max_value)
         rect->left = 0;
 }
+
+char *my_strcat(char *dest, char const *src)
+{
+    int i = 0;
+    int z = my_strlen(dest);
+
+    for (; src[i] != '\0'; i++) {
+        dest[z] = src[i];
+        z++;
+    }
+    dest[z] = '\0';
+    return (dest);
+}
