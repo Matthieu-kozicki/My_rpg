@@ -28,13 +28,20 @@ poke_t *add_to_list(poke_t *list)
 
 void create_spr_list(poke_t *list)
 {
+    static int y = 660;
+    static int x = 0;
     poke_t *tmp = list;
     int i = 0;
 
     while (tmp->next != NULL) {
         i++;
-        *tmp->spr = create_object(tmp->info[PATH_TO_SPRITE], (sfVector2f){0, 0});
+        if (x >= 1600) {
+            x = 0;
+            y -= 230;
+        }
+        *tmp->spr = create_object(tmp->info[PATH_TO_SPRITE], (sfVector2f){x, y});
         tmp = tmp->next;
+        x += 230;
     }
 }
 
