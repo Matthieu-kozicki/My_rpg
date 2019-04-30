@@ -20,6 +20,7 @@ void init_combat(combat_t *combat)
 {
     combat->clock[0] = sfClock_create();
     combat->clock[1] = sfClock_create();
+    combat->clock[2] = sfClock_create();
     combat->texts[0] = sfText_create();
     combat->texts[1] = sfText_create();
     combat->texts[2] = sfText_create();

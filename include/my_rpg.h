@@ -106,6 +106,8 @@ typedef struct button_s
 //add_functions.c
 void move_rect(sfIntRect *rect, int offset, int max_value);
 char *my_strcat(char *dest, char const *src);
+float randfloat(float min, float max);
+long randomiser(long min, long max);
 
 //array.c
 char **make_array(int x, int y);
@@ -115,6 +117,7 @@ char **map(int count, char **tab);
 void display_array(int y, char **tab);
 
 //combat.c
+void attack(int attacker, game_t *game, object_t *obj);
 void combat_loop(game_t *game, object_t *obj);
 combat_t *init_combat_sprites(char **player_team, char **enmy_team);
 char **alloc_2d_array(int nb_rows, int nb_cols);

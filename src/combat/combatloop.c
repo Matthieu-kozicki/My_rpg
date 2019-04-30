@@ -7,10 +7,18 @@
 
 #include "my_rpg.h"
 
-long randomiser(long min, long max)
+void attack(int attacker, game_t *game, object_t *obj)
 {
-    srand(time(NULL));
-    return((rand() % (max - min + 1)) + min);
+    if (attacker == 0) {
+        game->combat->poke[1].stats[HP] -=
+        game->combat->poke[0].stats[ATK] - game->combat->poke[0].stats[DEF]
+        + 1;
+    }
+    if (attacker == 1) {
+        game->combat->poke[0].stats[HP] -=
+        game->combat->poke[1].stats[ATK] - game->combat->poke[1].stats[DEF]
+        + 1;
+    } 
 }
 
 void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
@@ -64,16 +72,22 @@ void combat_loop(game_t *game, object_t *obj)
     draw_combat_sprites(game->window, obj, game);
     cursor_conditions(game);
     move_cursor(game, obj);
-    if (game->screen == 5 && game->cursor_pos == 3 && sfKeyboard_isKeyPressed(sfKeyReturn)) {
+    combat_ia(game, obj, 8.0);
+    if (game->screen == 5 && game->cursor_pos == 3 &&
+        sfKeyboard_isKeyPressed(sfKeyReturn)) {
         game->screen = 1;
         game->cursor_pos = 0;
     }
-    if (game->screen == 5 && game->cursor_pos == 0 && sfKeyboard_isKeyPressed(sfKeyReturn)) {
+    if (game->screen == 5 && game->cursor_pos == 0 &&
+        sfKeyboard_isKeyPressed(sfKeyReturn)) {
         if (game->combat->seconds[0] >= 0.2) {
-            game->combat->poke[1].stats[HP] -= 
-            game->combat->poke[0].stats[ATK] - game->combat->poke[0].stats[DEF]
-            + 1;
+            attack(0, game, obj);
             sfClock_restart(game->combat->clock[0]);
         }
+    }
+    if (game->combat->poke[0].stats[HP] <= 0 ||
+        game->combat->poke[1].stats[HP]<= 0) {
+        game->screen = 1;
+        game->cursor_pos = 0;
     }
 }

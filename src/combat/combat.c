@@ -55,7 +55,7 @@ int checker(int index, char *line, poke_t *poke)
     if (index == 7) poke->stats[2] = atoi(line);
     if (index == 8) poke->stats[3] = atoi(line);
     if (index == 9) poke->stats[4] = atoi(line);
-    if (index == 10 && (cmp_str("[END]", line, 5) != 1)) return (84);
+    if (index == 10 && (cmp_str("[END]", line, 5) != 1)) return (184);
     return (0);
 }
 
