@@ -63,11 +63,11 @@ typedef struct combat_s {
     sfSprite *spr[2];
     sfText *texts[4];
     sfFont *font;
-    sfClock *clock[2];
-    sfTime time[2];
+    sfClock *clock[3];
+    sfTime time[3];
+    float seconds[3];
     poke_t poke[2];
     poke_t *list;
-    float seconds[2];
 } combat_t;
 
 typedef struct game_s {
@@ -122,6 +122,10 @@ int check_pokefile(char *path, poke_t *poke);
 void init_combat(combat_t *combat);
 void load_poke_sprites(combat_t *combat);
 int poke_init(poke_t *list);
+long randint(long min, long max);
+
+//combat_ia.c
+void combat_ia(game_t *game, object_t *obj, float difficulty);
 
 //list.c
 poke_t *add_to_list(poke_t *list);
