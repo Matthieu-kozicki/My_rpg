@@ -14,7 +14,6 @@ static void manage_events_3(game_t *game, object_t *obj, sfEvent event)
 {
     int n = 0;
 
-    srand(time(NULL));
     if (game->stock == 'B' && event.type == sfEvtKeyPressed && obj->quest >= 2) {
         n = rand() %  100;
         if (n > 90)
