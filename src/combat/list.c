@@ -36,7 +36,7 @@ sfText *texted(sfText *text, sfVector2f pos, char *str)
     sfText_setString(text, str);
     sfText_setFont(text, font);
     sfText_setColor(text, sfBlack);
-    sfText_setCharacterSize(text, 50);
+    sfText_setCharacterSize(text, 40);
     return (text);
 }
 
@@ -48,8 +48,10 @@ void create_spr_list(poke_t *list)
     str = "Name :\n\nAttack name :\n\nHealth Point :\n\nAttack :\n\nDefense :";
     while (tmp->next != NULL) {
         *tmp->spr = create_object(tmp->info[PATH_TO_SPRITE],
-                                  (sfVector2f){150, 350});
-        tmp->inv = texted(tmp->inv, (sfVector2f) {500, 100}, str);
+                                  (sfVector2f){20, 340});
+        tmp->inv = texted(tmp->inv, (sfVector2f) {300, 150}, str);
+        tmp->name = texted(tmp->name, (sfVector2f) {530, 150}, tmp->info[NAME]);
+        tmp->attack_name = texted(tmp->attack_name, (sfVector2f) {750, 280}, tmp->info[ATK_NAME]);
         tmp = tmp->next;
     }
 }

@@ -58,6 +58,8 @@ typedef struct poke_s {
     object_t *spr;
     sfText *inv;
     sfText *number;
+    sfText *name;
+    sfText *attack_name;
     struct poke_s *next;
 } poke_t;
 
