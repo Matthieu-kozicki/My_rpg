@@ -56,6 +56,7 @@ typedef struct poke_s {
     int stats[5];
     char *info[4];
     object_t *spr;
+    sfText *inv;
     struct poke_s *next;
 } poke_t;
 

@@ -14,6 +14,7 @@ void inventory(game_t *game, object_t *obj)
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
     while (tmp->next != NULL) {
         sfRenderWindow_drawSprite(game->window, tmp->spr->spr, NULL);
+        sfRenderWindow_drawText(game->window, tmp->inv, NULL);
         tmp = tmp->next;
     }
     if (mouse_is_on(game, (sfVector2f){1475, 8}, 100, 95) == 1) {
