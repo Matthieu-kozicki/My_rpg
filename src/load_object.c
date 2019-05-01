@@ -64,11 +64,11 @@ object_t *load_object2(object_t *obj)
     obj[28] = create_object("pictures/battle.png", (sfVector2f){0, 0});
     obj[29] = create_object("pictures/cursor.png", (sfVector2f){848, 662});
     obj[30] = create_object("pictures/key.png", (sfVector2f){575, 200});
-    obj[31] = create_object("pictures/bag.png", (sfVector2f){205, 50});
+    obj[31] = create_object("pictures/ui.png", (sfVector2f){205, 50});
     obj[32] = create_object("pictures/text.png", (sfVector2f){0, 0});
     obj[33] = create_object("pictures/3d_effect.png", (sfVector2f){0, 0});
     obj[34] = create_object("pictures/inventory.png", (sfVector2f){0, 0});
-    obj[35] = create_object("pictures/leave.png", (sfVector2f){1472, 5});
+    obj[35] = create_object("pictures/leavek.png", (sfVector2f){1472, 5});
     obj = load_object3(obj);
     return (obj);
 }
@@ -76,9 +76,9 @@ object_t *load_object2(object_t *obj)
 object_t *load_object3(object_t *obj)
 {
     obj[36] = create_object("pictures/quest.png", (sfVector2f){207, 80});
-    obj[37] = create_object("pictures/quest1.png", (sfVector2f){42, 50});
-    obj[38] = create_object("pictures/quest2.png", (sfVector2f){42, 50});
-    obj[39] = create_object("pictures/quest3.png", (sfVector2f){42, 50});
+    obj[37] = create_object("pictures/quest1.png", (sfVector2f){85, 55});
+    obj[38] = create_object("pictures/quest2.png", (sfVector2f){85, 55});
+    obj[39] = create_object("pictures/quest3.png", (sfVector2f){85, 55});
     obj[40] = create_object("pictures/text1.png", (sfVector2f){345, 1518});
     obj[41] = create_object("pictures/text2.png", (sfVector2f){218, 768});
     return (obj);

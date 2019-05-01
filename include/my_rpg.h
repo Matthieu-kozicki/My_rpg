@@ -162,6 +162,8 @@ void init_game_variables(game_t *game, object_t *obj);
 //quest.c
 void quest(game_t *game, object_t *obj);
 void dialogue(game_t *game, object_t *obj);
+int nb_digits(int nb);
+char *int_to_char(int nb);
 
 //game_loop.c
 void game_loop(game_t *game, object_t *obj);

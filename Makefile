@@ -30,7 +30,8 @@ SRC	=	src/main.c			\
 		src/putinstr.c			\
 		src/clocks.c			\
 		src/inventory.c			\
-		src/quest/quest.c
+		src/quest/quest.c		\
+		src/quest/int_to_char.c
 
 OBJ	=	$(SRC:.c=.o)
 
