@@ -21,7 +21,8 @@ void move_ui(object_t *obj, sfVector2f vector, game_t *game)
 
 void move_hero_2(sfEvent event, object_t *obj, game_t *game)
 {
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyS) {
+    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyS
+        && obj->quest % 2 != 0) {
         obj[4].rect.top = 0;
         if (test_block(1, 0, game) == 1 || test_block(1, 0, game) == 2) {
             move_ui(obj, (sfVector2f){0, 16}, game);
@@ -30,7 +31,8 @@ void move_hero_2(sfEvent event, object_t *obj, game_t *game)
             game->tab[game->pos_y + 1][game->pos_x] = 'P';
         }
     }
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyD) {
+    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyD
+        && obj->quest % 2 != 0) {
         obj[4].rect.top = 150;
         if (test_block(0, 1, game) == 1) {
             move_ui(obj, (sfVector2f){16, 0}, game);
@@ -43,7 +45,8 @@ void move_hero_2(sfEvent event, object_t *obj, game_t *game)
 
 void move_hero_1(sfEvent event, object_t *obj, game_t *game)
 {
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyZ) {
+    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyZ
+        && obj->quest % 2 != 0) {
         obj[4].rect.top = 50;
         if (test_block(-1, 0, game) == 1) {
             move_ui(obj, (sfVector2f){0, -16}, game);
@@ -52,7 +55,8 @@ void move_hero_1(sfEvent event, object_t *obj, game_t *game)
             game->tab[game->pos_y - 1][game->pos_x] = 'P';
         }
     }
-    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyQ) {
+    if (event.type == sfEvtKeyPressed && event.key.code == sfKeyQ
+        && obj->quest % 2 != 0) {
         obj[4].rect.top = 100;
         if (test_block(0, -1, game) == 1) {
             move_ui(obj, (sfVector2f){-16, 0}, game);
