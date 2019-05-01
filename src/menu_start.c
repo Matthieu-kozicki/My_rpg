@@ -37,7 +37,6 @@ void menu(game_t *game, object_t *obj)
             sfRenderWindow_drawSprite(game->window, obj[14].spr, NULL);
         if (obj->clicked == 1) {
             game->screen = 4;
-            //sfSleep((sfTime){300000});
         }
     }
     menu2(game, obj);

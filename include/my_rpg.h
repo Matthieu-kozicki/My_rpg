@@ -69,6 +69,7 @@ typedef struct combat_s {
     sfTime time[3];
     float seconds[3];
     poke_t poke[2];
+    poke_t *tmp;
     poke_t *list;
 } combat_t;
 

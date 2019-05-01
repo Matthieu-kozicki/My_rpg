@@ -9,14 +9,14 @@
 
 void inventory(game_t *game, object_t *obj)
 {
-    poke_t *tmp = game->combat->list;
-
+    sfSleep((sfTime) {100000});
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
-    while (tmp->next != NULL) {
-        sfRenderWindow_drawSprite(game->window, tmp->spr->spr, NULL);
-        sfRenderWindow_drawText(game->window, tmp->inv, NULL);
-        tmp = tmp->next;
-    }
+    if (game->combat->tmp->next != NULL && sfKeyboard_isKeyPressed(sfKeyRight))
+        game->combat->tmp = game->combat->tmp->next;
+    //if (game->combat->tmp->next != NULL && sfKeyboard_isKeyPressed(sfKeyLeft))
+        //element d'avant dans la liste
+    sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->inv, NULL);
     if (mouse_is_on(game, (sfVector2f){1475, 8}, 100, 95) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
         if (obj->moused == 1)

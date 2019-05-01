@@ -38,6 +38,7 @@ void init_game_variables2(game_t *game, object_t *obj)
     sfSprite_setScale(obj[41].spr,(sfVector2f){0.75, 1});
     obj->quest = 1;
     game->stock = ' ';
+    game->combat->tmp = game->combat->list;
 }
 
 void init_game_variables(game_t *game, object_t *obj)
