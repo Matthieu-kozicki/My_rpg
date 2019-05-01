@@ -60,6 +60,10 @@ typedef struct poke_s {
     sfText *number;
     sfText *name;
     sfText *attack_name;
+    sfText *hp;
+    sfText *attack;
+    sfText *defense;
+    sfText *cost;
     struct poke_s *next;
 } poke_t;
 

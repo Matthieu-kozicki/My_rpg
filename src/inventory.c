@@ -7,6 +7,17 @@
 
 #include "my_rpg.h"
 
+void draw_info(game_t *game)
+{
+    sfRenderWindow_drawText(game->window, game->combat->tmp->inv, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->name, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->attack_name, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->hp, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->attack, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->defense, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp->cost, NULL);
+}
+
 void inventory(game_t *game, object_t *obj)
 {
     sfSleep((sfTime) {100000});
@@ -16,9 +27,7 @@ void inventory(game_t *game, object_t *obj)
     //if (game->combat->tmp->next != NULL && sfKeyboard_isKeyPressed(sfKeyLeft))
         //element d'avant dans la liste
     sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
-    sfRenderWindow_drawText(game->window, game->combat->tmp->inv, NULL);
-    sfRenderWindow_drawText(game->window, game->combat->tmp->name, NULL);
-    sfRenderWindow_drawText(game->window, game->combat->tmp->attack_name, NULL);
+    draw_info(game);
     if (mouse_is_on(game, (sfVector2f){1475, 8}, 100, 95) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
         if (obj->moused == 1)
