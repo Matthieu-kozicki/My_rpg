@@ -33,7 +33,7 @@ char *intstr(int nb, int digits)
 {
     int digi = 1;
     int print = 0;
-    char *result = malloc(sizeof(char) * digits);
+    char *result = malloc(sizeof(char) * digits + 1);
 
     if (nb < 0) {
         result[print] = '-';
@@ -47,6 +47,6 @@ char *intstr(int nb, int digits)
         nb = nb % digi;
         digi = digi / 10;
     }
-    result[digits-1] = '\0';
+    result[digits] = '\0';
     return (result);
 }

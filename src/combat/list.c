@@ -51,10 +51,14 @@ void create_spr_list(poke_t *list)
                                   (sfVector2f){150, 285});
         tmp->inv = texted(tmp->inv, (sfVector2f) {600, 75}, str);
         tmp->name = texted(tmp->name, (sfVector2f) {90, 50}, tmp->info[NAME]);
-        tmp->attack_name = texted(tmp->attack_name, (sfVector2f) {950, 75}, tmp->info[ATK_NAME]);
-        tmp->hp = texted(tmp->hp, (sfVector2f) {950, 170}, "150");
-        tmp->attack = texted(tmp->attack, (sfVector2f) {840, 260}, "3");
-        tmp->defense = texted(tmp->defense, (sfVector2f) {865, 350}, "7");
+        tmp->attack_name = texted(tmp->attack_name, (sfVector2f) {950, 75},
+                                  tmp->info[ATK_NAME]);
+        tmp->hp = texted(tmp->hp, (sfVector2f) {950, 170},
+                        intstr(tmp->stats[HP],nb_digits(tmp->stats[HP])));
+        tmp->attack = texted(tmp->attack, (sfVector2f) {840,
+                    260},intstr(tmp->stats[ATK],nb_digits(tmp->stats[ATK])));
+        tmp->defense = texted(tmp->defense, (sfVector2f) {865,
+                    350},intstr(tmp->stats[DEF],nb_digits(tmp->stats[DEF])));
         tmp->cost = texted(tmp->cost, (sfVector2f) {820, 440}, "150");
         tmp = tmp->next;
     }
