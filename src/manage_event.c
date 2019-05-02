@@ -10,13 +10,13 @@
 #include <stdio.h>
 #include <time.h>
 
-static void manage_events_3(game_t *game, object_t *obj, sfEvent event)
+void rand_combat(game_t *game, object_t *obj)
 {
     int n = 0;
 
-    if (game->stock == 'B' && game->screen == 1 && event.type == sfEvtKeyPressed && obj->quest >= 2) {
+    if (game->stock == 'B' && game->screen == 1 && obj->quest >= 2) {
         n = randint(0, 100);
-        if (n > 95) {
+        if (n > 80) {
             printf("%s\n", "FIGHT");
             find_randpoke(game);
             load_poke_sprites(game->combat);
@@ -60,6 +60,5 @@ void manage_events(game_t *game, object_t *obj)
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1)
             game->screen = 2;
         manage_events_2(game, obj, event);
-        manage_events_3(game, obj, event);
     }
 }
