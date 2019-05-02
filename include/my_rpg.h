@@ -73,6 +73,8 @@ typedef struct combat_s {
     sfSprite *spr[2];
     sfText *texts[4];
     sfFont *font;
+    int money;
+    sfText *cash;
     sfClock *clock[3];
     sfTime time[3];
     float seconds[3];
@@ -112,7 +114,7 @@ typedef struct button_s
     sfTexture *texture;
     sfSprite *but;
     char *but_text;
-}button_t;
+} button_t;
 
 //add_functions.c
 void move_rect(sfIntRect *rect, int offset, int max_value);

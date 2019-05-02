@@ -45,7 +45,8 @@ void create_spr_list(poke_t *list)
     char *str;
     poke_t *tmp = list;
 
-    str = "Attack name :\n\nHealth Point :\n\nAttack :\n\nDefense :\n\nCost :";
+    str = "Attack name :\n\nHealth Point :\n\nAttack :\n\nDef"
+        "ense :\n\nCost :\n\nMoney :";
     while (tmp->next != NULL) {
         *tmp->spr = create_object(tmp->info[PATH_TO_SPRITE],
                                   (sfVector2f){150, 285});
