@@ -42,6 +42,13 @@ void menu(game_t *game, object_t *obj)
     menu2(game, obj);
 }
 
+void animation_next(game_t *game, object_t *obj, int i)
+{
+    if (obj->moused == 1 || i > 280)
+        game->screen = 3;
+    sfRenderWindow_drawSprite(game->window, obj[0].spr, NULL);
+}
+
 void animation(game_t *game, object_t *obj)
 {
     static int i = 0;
@@ -62,7 +69,5 @@ void animation(game_t *game, object_t *obj)
         sfSprite_move(obj[1].spr, (sfVector2f){-4, 0});
         sfRenderWindow_drawSprite(game->window, obj[1].spr, NULL);
     }
-    if (obj->moused == 1)
-        game->screen = 3;
-    sfRenderWindow_drawSprite(game->window, obj[0].spr, NULL);
+    animation_next(game, obj, i);
 }

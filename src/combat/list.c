@@ -59,7 +59,8 @@ void create_spr_list(poke_t *list)
                     260},intstr(tmp->stats[ATK],nb_digits(tmp->stats[ATK])));
         tmp->defense = texted(tmp->defense, (sfVector2f) {865,
                     350},intstr(tmp->stats[DEF],nb_digits(tmp->stats[DEF])));
-        tmp->cost = texted(tmp->cost, (sfVector2f) {820, 440}, "150");
+        tmp->cost = texted(tmp->cost, (sfVector2f) {820, 440},
+                           intstr(tmp->stats[COST],nb_digits(tmp->stats[COST])));
         tmp = tmp->next;
     }
 }
