@@ -7,16 +7,18 @@
 
 #include "my_rpg.h"
 
-int calculate_atk(int attacker, poke_t poke[])
+int calculate_atk(int attacker, combat_t *combat)
 {
     int attack_value = 0;
 
     if (attacker == 0) {
-        attack_value = poke[0].stats[ATK] - poke[1].stats[DEF];
+        attack_value = combat->poke[0].stats[ATK] -
+        combat->tmp->stats[DEF];
         if (attack_value <= 0) return (1);
     }
     if (attacker == 1) {
-        attack_value = poke[1].stats[ATK] - poke[0].stats[DEF];
+        attack_value = combat->tmp->stats[ATK] -
+        combat->poke[0].stats[DEF];
         if (attack_value <= 0) return (1);
     }
     return (attack_value);

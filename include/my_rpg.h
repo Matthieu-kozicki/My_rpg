@@ -144,7 +144,7 @@ char *my_strdup(char *src);
 
 //combat_ia.c
 void combat_ia(game_t *game, float difficulty);
-int calculate_atk(int attacker, poke_t poke[]);
+int calculate_atk(int attacker, combat_t *combat);
 
 //list.c
 poke_t *add_to_list(poke_t *list);

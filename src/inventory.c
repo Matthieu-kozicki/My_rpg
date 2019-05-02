@@ -40,8 +40,6 @@ void inventory(game_t *game, object_t *obj)
         game->combat->tmp = game->combat->tmp->next;
     if (game->combat->tmp->next->next == NULL)
         game->combat->tmp = game->combat->list;
-    if (sfKeyboard_isKeyPressed(sfKeyE))
-        dup_poke(game->combat->tmp, &game->combat->poke[1]);
     sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
     draw_info(game);
     if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {

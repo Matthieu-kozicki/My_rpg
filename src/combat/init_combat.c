@@ -45,7 +45,7 @@ void load_poke_sprites(combat_t *combat)
     tmp = sfTexture_createFromFile(combat->poke[0].info[PATH_TO_SPRITE], NULL);
     sfSprite_setTexture(combat->spr[0], tmp, sfTrue);
     combat->spr[1] = sfSprite_create();
-    tmp = sfTexture_createFromFile(combat->poke[1].info[PATH_TO_SPRITE], NULL);
+    tmp = sfTexture_createFromFile(combat->tmp->info[PATH_TO_SPRITE], NULL);
     sfSprite_setTexture(combat->spr[1], tmp, sfTrue);
     sfSprite_setScale(combat->spr[1], (sfVector2f){-1.3, 1.3});
     sfSprite_setPosition(combat->spr[1], (sfVector2f){550, 300});
