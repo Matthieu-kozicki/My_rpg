@@ -34,7 +34,7 @@ void draw_info(game_t *game)
 
 void inventory(game_t *game, object_t *obj)
 {
-    sfSleep((sfTime) {100000});
+    sfSleep((sfTime) {150000});
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
     if (game->combat->tmp->next->next != NULL && sfKeyboard_isKeyPressed(sfKeyRight))
         game->combat->tmp = game->combat->tmp->next;
