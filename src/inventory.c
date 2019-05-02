@@ -28,7 +28,7 @@ void inventory(game_t *game, object_t *obj)
         //element d'avant dans la liste
     sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
     draw_info(game);
-    if (mouse_is_on(game, (sfVector2f){1475, 8}, 100, 95) == 1) {
+    if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
         if (obj->moused == 1)
             game->screen = 1;
