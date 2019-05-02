@@ -32,8 +32,8 @@ object_t *load_object(object_t *obj)
     obj[1] = create_object("pictures/logo.png", (sfVector2f){1750, 280});
     obj[2] = create_object("pictures/intro2.jpg", (sfVector2f){0, 0});
     obj[3] = create_object("pictures/background.png", (sfVector2f){0, 0});
-    obj[4] = create_object("pictures/character.png", (sfVector2f){111, 94});
-    //x = 272 y = 1358
+    obj[4] = create_object("pictures/character.png", (sfVector2f){271, 1356});
+    //x = 271 y = 1356
     obj[5] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[6] = create_object("pictures/exit1.png", (sfVector2f){725, 700});
     obj[7] = create_object("pictures/exit2.png", (sfVector2f){725, 700});
@@ -65,11 +65,11 @@ object_t *load_object2(object_t *obj)
     obj[28] = create_object("pictures/battle.png", (sfVector2f){0, 0});
     obj[29] = create_object("pictures/cursor.png", (sfVector2f){848, 662});
     obj[30] = create_object("pictures/key.png", (sfVector2f){575, 200});
-    obj[31] = create_object("pictures/ui.png", (sfVector2f){205, 50});
-    obj[32] = create_object("pictures/text.png", (sfVector2f){0, 0});
+    obj[31] = create_object("pictures/ui.png", (sfVector2f){271 + 95, 1356 - 44});
+    //obj[32] = create_object("pictures/text.png", (sfVector2f){0, 0});
     obj[33] = create_object("pictures/3d_effect.png", (sfVector2f){0, 0});
     obj[34] = create_object("pictures/inventory.png", (sfVector2f){0, 0});
-    obj[35] = create_object("pictures/leavek.png", (sfVector2f){57, 700});
+    obj[35] = create_object("pictures/leave.png", (sfVector2f){57, 700});
     obj = load_object3(obj);
     return (obj);
 }
@@ -77,9 +77,9 @@ object_t *load_object2(object_t *obj)
 object_t *load_object3(object_t *obj)
 {
     obj[36] = create_object("pictures/back.png", (sfVector2f){-98, -56});
-    obj[37] = create_object("pictures/quest1.png", (sfVector2f){85, 55});
-    obj[38] = create_object("pictures/quest2.png", (sfVector2f){85, 55});
-    obj[39] = create_object("pictures/quest3.png", (sfVector2f){85, 55});
+    obj[37] = create_object("pictures/quest1.png", (sfVector2f){271 - 26, 1356 - 39});
+    obj[38] = create_object("pictures/quest2.png", (sfVector2f){271 - 26, 1356 - 39});
+    obj[39] = create_object("pictures/quest3.png", (sfVector2f){271 - 26, 1356 - 39});
     obj[40] = create_object("pictures/text1.png", (sfVector2f){346, 1518});
     obj[41] = create_object("pictures/text2.png", (sfVector2f){218, 768});
     return (obj);
