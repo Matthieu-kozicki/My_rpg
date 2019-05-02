@@ -33,6 +33,7 @@ object_t *load_object(object_t *obj)
     obj[2] = create_object("pictures/intro2.jpg", (sfVector2f){0, 0});
     obj[3] = create_object("pictures/background.png", (sfVector2f){0, 0});
     obj[4] = create_object("pictures/character.png", (sfVector2f){111, 94});
+    //x = 272 y = 1358
     obj[5] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[6] = create_object("pictures/exit1.png", (sfVector2f){725, 700});
     obj[7] = create_object("pictures/exit2.png", (sfVector2f){725, 700});
@@ -75,11 +76,11 @@ object_t *load_object2(object_t *obj)
 
 object_t *load_object3(object_t *obj)
 {
-    obj[36] = create_object("pictures/quest.png", (sfVector2f){207, 80});
+    obj[36] = create_object("pictures/back.png", (sfVector2f){-98, -56});
     obj[37] = create_object("pictures/quest1.png", (sfVector2f){85, 55});
     obj[38] = create_object("pictures/quest2.png", (sfVector2f){85, 55});
     obj[39] = create_object("pictures/quest3.png", (sfVector2f){85, 55});
-    obj[40] = create_object("pictures/text1.png", (sfVector2f){345, 1518});
+    obj[40] = create_object("pictures/text1.png", (sfVector2f){346, 1518});
     obj[41] = create_object("pictures/text2.png", (sfVector2f){218, 768});
     return (obj);
 }

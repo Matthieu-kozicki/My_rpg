@@ -29,12 +29,11 @@ void load_window(game_t *game)
 void init_game_variables2(game_t *game, object_t *obj)
 {
     game->volume = 100;
-    sfSprite_setScale(obj[36].spr,(sfVector2f){0.07, 0.07});
     sfSprite_setScale(obj[37].spr,(sfVector2f){0.35, 0.4});
     sfSprite_setScale(obj[38].spr,(sfVector2f){0.35, 0.4});
     sfSprite_setScale(obj[39].spr,(sfVector2f){0.35, 0.4});
-    sfSprite_setScale(obj[40].spr,(sfVector2f){0.75, 1});
-    sfSprite_setScale(obj[41].spr,(sfVector2f){0.75, 1});
+    sfSprite_setScale(obj[40].spr,(sfVector2f){0.40, 0.5});
+    sfSprite_setScale(obj[41].spr,(sfVector2f){0.40, 0.5});
     obj->quest = 1;
     game->stock = ' ';
     game->combat->tmp = game->combat->list;

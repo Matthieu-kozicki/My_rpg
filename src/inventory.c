@@ -24,8 +24,9 @@ void inventory(game_t *game, object_t *obj)
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
     if (game->combat->tmp->next->next != NULL && sfKeyboard_isKeyPressed(sfKeyRight))
         game->combat->tmp = game->combat->tmp->next;
-    //if (game->combat->tmp->next != NULL && sfKeyboard_isKeyPressed(sfKeyLeft))
-        //element d'avant dans la liste
+    if (game->combat->tmp->next->next == NULL)
+        game->combat->tmp = game->combat->list;
+        
     sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
     draw_info(game);
     if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
