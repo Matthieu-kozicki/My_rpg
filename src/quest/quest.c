@@ -15,7 +15,6 @@ void quest(game_t *game, object_t *obj)
         sfRenderWindow_drawSprite(game->window, obj[38].spr, NULL);
     if (obj->quest == 5)
         sfRenderWindow_drawSprite(game->window, obj[39].spr, NULL);
-    //printf("x = %d\n | y = %d\n", game->pos_x, game->pos_y);
 }
 
 void dialogue(game_t *game, object_t *obj)
@@ -30,4 +29,9 @@ void dialogue(game_t *game, object_t *obj)
         obj->quest = 5;
     if (obj->quest == 4)
         sfRenderWindow_drawSprite(game->window, obj[41].spr, NULL);
+    if (obj->quest == 6)
+        sfRenderWindow_drawSprite(game->window, obj[32].spr, NULL);
+    if (game->pos_x == 36 && game->pos_y == 12
+        && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 6)
+        obj->quest = 7;
 }

@@ -33,7 +33,6 @@ object_t *load_object(object_t *obj)
     obj[2] = create_object("pictures/intro2.jpg", (sfVector2f){0, 0});
     obj[3] = create_object("pictures/background.png", (sfVector2f){0, 0});
     obj[4] = create_object("pictures/character.png", (sfVector2f){271, 1356});
-    //x = 271 y = 1356
     obj[5] = create_object("pictures/pause.jpg", (sfVector2f){0, 0});
     obj[6] = create_object("pictures/exit1.png", (sfVector2f){725, 700});
     obj[7] = create_object("pictures/exit2.png", (sfVector2f){725, 700});
@@ -66,7 +65,7 @@ object_t *load_object2(object_t *obj)
     obj[29] = create_object("pictures/cursor.png", (sfVector2f){848, 662});
     obj[30] = create_object("pictures/key.png", (sfVector2f){575, 200});
     obj[31] = create_object("pictures/ui.png", (sfVector2f){271 + 95, 1356 - 44});
-    //obj[32] = create_object("pictures/text.png", (sfVector2f){0, 0});
+    obj[32] = create_object("pictures/text3.png", (sfVector2f){490, 200});
     obj[33] = create_object("pictures/3d_effect.png", (sfVector2f){0, 0});
     obj[34] = create_object("pictures/inventory.png", (sfVector2f){0, 0});
     obj[35] = create_object("pictures/leave.png", (sfVector2f){57, 700});
