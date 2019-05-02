@@ -33,6 +33,7 @@ enum stats {
     HP,
     ATK,
     DEF,
+    COST,
 };
 
 enum info {
