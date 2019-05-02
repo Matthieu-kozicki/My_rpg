@@ -27,12 +27,12 @@ void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
     sfRenderWindow_drawSprite(window, obj[29].spr, NULL);
     sfRenderWindow_drawSprite(window, game->combat->spr[0], NULL);
     sfRenderWindow_drawSprite(window, game->combat->spr[1], NULL);
-    sfText_setString(game->combat->texts[0],
-        intstr(game->combat->poke[0].stats[HP], nb_digits(game->combat->poke[0].stats[HP])));
     sfText_setString(game->combat->texts[1],
+        intstr(game->combat->poke[0].stats[HP], nb_digits(game->combat->poke[0].stats[HP])));
+    sfText_setString(game->combat->texts[0],
         intstr(game->combat->poke[1].stats[HP], nb_digits(game->combat->poke[1].stats[HP])));
-    sfText_setString(game->combat->texts[2], game->combat->poke[0].info[NAME]);
-    sfText_setString(game->combat->texts[3], game->combat->poke[1].info[NAME]);
+    sfText_setString(game->combat->texts[2], game->combat->poke[1].info[NAME]);
+    sfText_setString(game->combat->texts[3], game->combat->poke[0].info[NAME]);
     sfRenderWindow_drawText(window, game->combat->texts[0], NULL);
     sfRenderWindow_drawText(window, game->combat->texts[1], NULL);
     sfRenderWindow_drawText(window, game->combat->texts[2], NULL);
@@ -81,7 +81,7 @@ void combat_loop(game_t *game, object_t *obj)
     if (game->screen == 5 && game->cursor_pos == 0 &&
         sfKeyboard_isKeyPressed(sfKeyReturn)) {
         if (game->combat->seconds[0] >= 0.2) {
-            attack(0, game, obj);
+            attack(1, game, obj);
             sfClock_restart(game->combat->clock[0]);
         }
     }

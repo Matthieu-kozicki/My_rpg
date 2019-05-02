@@ -10,11 +10,11 @@
 void combat_ia(game_t *game, object_t *obj, float difficulty)
 {
     static int attack_time = 2;
-    static float heal_percent = 100;
+    //static float heal_percent = 100;
 
     if (game->combat->seconds[1] >= attack_time) {
         attack_time = randfloat(0.5, 10 - difficulty);
-        attack(1, game, obj);
+        attack(0, game, obj);
         sfClock_restart(game->combat->clock[1]);
     }
     /*heal_percent = randfloat(0.1, 100);
