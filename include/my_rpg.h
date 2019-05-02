@@ -76,6 +76,7 @@ typedef struct combat_s {
     sfClock *clock[3];
     sfTime time[3];
     float seconds[3];
+    float difficulty;
     poke_t poke[2];
     poke_t *tmp;
     poke_t *list;
@@ -118,7 +119,7 @@ typedef struct button_s
 void move_rect(sfIntRect *rect, int offset, int max_value);
 char *my_strcat(char *dest, char const *src);
 float randfloat(float min, float max);
-long randomiser(long min, long max);
+long randint(long min, long max);
 
 //array.c
 char **make_array(int x, int y);
@@ -128,7 +129,7 @@ char **map(int count, char **tab);
 void display_array(int y, char **tab);
 
 //combat.c
-void attack(int attacker, game_t *game, object_t *obj);
+void attack(int attacker, game_t *game);
 void combat_loop(game_t *game, object_t *obj);
 combat_t *init_combat_sprites(char **player_team, char **enmy_team);
 char **alloc_2d_array(int nb_rows, int nb_cols);
@@ -140,12 +141,14 @@ long randint(long min, long max);
 char *my_strdup(char *src);
 
 //combat_ia.c
-void combat_ia(game_t *game, object_t *obj, float difficulty);
+void combat_ia(game_t *game, float difficulty);
+int calculate_atk(int attacker, poke_t poke[]);
 
 //list.c
 poke_t *add_to_list(poke_t *list);
 void print_list(poke_t *list);
 void create_spr_list(poke_t *list);
+void find_randpoke(game_t *game);
 
 //keybinding.c
 void keybinding(game_t *game, object_t *obj);
@@ -184,6 +187,7 @@ object_t *load_object3(object_t *obj);
 
 //inventory.c
 void inventory(game_t *game, object_t *obj);
+void dup_poke(poke_t *origin, poke_t *dup);
 
 //manag_map.c
 int check_pos(game_t *game);

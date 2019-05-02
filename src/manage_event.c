@@ -14,17 +14,21 @@ static void manage_events_3(game_t *game, object_t *obj, sfEvent event)
 {
     int n = 0;
 
-    if (game->stock == 'B' && event.type == sfEvtKeyPressed && obj->quest >= 2) {
-        n = rand() %  100;
-        if (n > 90)
+    if (game->stock == 'B' && game->screen == 1 && event.type == sfEvtKeyPressed && obj->quest >= 2) {
+        n = randint(0, 100);
+        if (n > 95) {
             printf("%s\n", "FIGHT");
+            find_randpoke(game);
+            load_poke_sprites(game->combat);
+            game->screen = 5;
+        }
     }
 }
 
 void manage_events_2(game_t *game, object_t *obj, sfEvent event)
 {
     if (sfKeyboard_isKeyPressed(sfKeyC)) {
-        check_pokefile("src/combat/tortank.pokefile", &game->combat->poke[0]);
+        //check_pokefile("src/combat/tortank.pokefile", &game->combat->poke[0]);
         load_poke_sprites(game->combat);
         game->screen = 5;
     }

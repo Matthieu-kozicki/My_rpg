@@ -65,12 +65,28 @@ void create_spr_list(poke_t *list)
     }
 }
 
-void print_list(poke_t *list)
+int size_list(poke_t *list)
 {
     poke_t *tmp = list;
+    int i = 0;
 
     while (tmp->next != NULL) {
-        printf("%s\n", tmp->info[NAME]);
         tmp = tmp->next;
+        i++;
     }
+    return (i);
+}
+
+void find_randpoke(game_t *game)
+{
+    int random = randint(1, size_list(game->combat->list));
+    poke_t *tmp = game->combat->list;
+
+    for (int i = 1; tmp->next != NULL && i != random; i++)
+        tmp = tmp->next;
+    dup_poke(tmp, &game->combat->poke[0]);
+    game->combat->difficulty = randfloat(3, 7);
+    game->combat->poke[0].stats[HP] = randint(20, 80);
+    game->combat->poke[0].stats[DEF] = randint(0, 10);   
+    game->combat->poke[0].stats[ATK] = randint(0, 10);   
 }

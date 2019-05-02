@@ -32,7 +32,7 @@ float randfloat(float min, float max)
     return (min + ((float)rand()/(float)(RAND_MAX)) * max);
 }
 
-long randomiser(long min, long max)
+long randint(long min, long max)
 {
     return((rand() % (max - min + 1)) + min);
 }
