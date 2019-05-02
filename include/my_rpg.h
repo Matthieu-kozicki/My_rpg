@@ -34,6 +34,7 @@ enum stats {
     ATK,
     DEF,
     COST,
+    ACTUAL_HP,
 };
 
 enum info {
@@ -54,7 +55,7 @@ typedef struct object_s {
 } object_t;
 
 typedef struct poke_s {
-    int stats[5];
+    int stats[6];
     char *info[4];
     object_t *spr;
     sfText *inv;
@@ -136,6 +137,7 @@ void init_combat(combat_t *combat);
 void load_poke_sprites(combat_t *combat);
 int poke_init(poke_t *list);
 long randint(long min, long max);
+char *my_strdup(char *src);
 
 //combat_ia.c
 void combat_ia(game_t *game, object_t *obj, float difficulty);

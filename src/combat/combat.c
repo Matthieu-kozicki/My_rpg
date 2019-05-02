@@ -73,6 +73,7 @@ int check_pokefile(char *path, poke_t *poke)
         if (checker(i, line, poke) == 84) return (84);
         i++;
     }
+    poke->stats[ACTUAL_HP] = poke->stats[HP];
     return (0);
 }
 

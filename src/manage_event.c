@@ -25,7 +25,7 @@ void manage_events_2(game_t *game, object_t *obj, sfEvent event)
 {
     if (sfKeyboard_isKeyPressed(sfKeyC)) {
         check_pokefile("src/combat/tortank.pokefile", &game->combat->poke[0]);
-        check_pokefile("src/combat/tortank.pokefile", &game->combat->poke[1]);
+        //check_pokefile("src/combat/tortank.pokefile", &game->combat->poke[1]);
         load_poke_sprites(game->combat);
         game->screen = 5;
     }
