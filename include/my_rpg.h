@@ -195,6 +195,7 @@ object_t *load_object3(object_t *obj);
 
 //inventory.c
 void inventory(game_t *game, object_t *obj);
+void shop(game_t *game, object_t *obj);
 void dup_poke(poke_t *origin, poke_t *dup);
 sfText *texted(sfText *text, sfVector2f pos, char *str);
 

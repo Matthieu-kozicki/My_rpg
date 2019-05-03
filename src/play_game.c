@@ -23,7 +23,7 @@ void play_game(game_t *game, object_t *obj)
     sfRenderWindow_drawSprite(game->window, obj[31].spr, NULL);
     sfSprite_setTextureRect(obj[4].spr, obj[4].rect);
     if (sfKeyboard_isKeyPressed(sfKeyI))
-        game->screen = 6;
+        game->screen = 7;
     if (sfKeyboard_isKeyPressed(sfKeyP))
         quest(game, obj);
     if (game->pos_x == 27 && game->pos_y == 94

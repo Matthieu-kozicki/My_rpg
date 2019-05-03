@@ -27,17 +27,14 @@ void game_loop(game_t *game, object_t *obj)
         sfRenderWindow_clear(game->window, sfBlack);
         if (game->screen != 1)
             sfRenderWindow_setView (game->window, game->view_2);
-        if (game->screen == 1)
-            play_game(game, obj);
-        if (game->screen == 2)
-            pause_menu(game, obj);
-        if (game->screen == 3)
-            menu(game, obj);
-        if (game->screen == 0)
-            animation(game, obj);
+        if (game->screen == 1) play_game(game, obj);
+        if (game->screen == 2) pause_menu(game, obj);
+        if (game->screen == 3) menu(game, obj);
+        if (game->screen == 0) animation(game, obj);
         if (game->screen == 5) combat_loop(game, obj);
         if (game->screen == 4) menu_option(game, obj);
-        if (game->screen == 6) inventory(game, obj);
+        if (game->screen == 6) shop(game, obj);
+        if (game->screen == 7) inventory(game, obj);
         sfRenderWindow_display(game->window);
     }
 }

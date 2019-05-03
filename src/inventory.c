@@ -15,10 +15,10 @@ void dup_poke(poke_t *origin, poke_t *dup)
     dup->stats[ATK] = origin->stats[ATK];
     dup->stats[DEF] = origin->stats[DEF];
     dup->stats[COST] = origin->stats[COST];
-    dup->info[NAME] = my_strdup(origin->info[NAME]);   
+    dup->info[NAME] = my_strdup(origin->info[NAME]);
     dup->info[ATK_NAME] = my_strdup(origin->info[ATK_NAME]);
     dup->info[PATH_TO_SPRITE] = my_strdup(origin->info[PATH_TO_SPRITE]);
-    dup->info[PATH_TO_ATK] = my_strdup(origin->info[PATH_TO_ATK]);   
+    dup->info[PATH_TO_ATK] = my_strdup(origin->info[PATH_TO_ATK]);
 }
 
 void draw_info(game_t *game)
@@ -35,7 +35,17 @@ void draw_info(game_t *game)
 
 void inventory(game_t *game, object_t *obj)
 {
-    sfSleep((sfTime) {150000});
+    sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
+    if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
+        sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
+        if (obj->moused == 1)
+            game->screen = 1;
+    }
+}
+
+void shop(game_t *game, object_t *obj)
+{
+    sfSleep((sfTime) {100000});
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
     if (game->combat->tmp->next->next != NULL && sfKeyboard_isKeyPressed(sfKeySpace))
         game->combat->tmp = game->combat->tmp->next;
