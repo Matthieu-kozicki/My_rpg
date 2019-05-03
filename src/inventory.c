@@ -21,6 +21,18 @@ void dup_poke(poke_t *origin, poke_t *dup)
     dup->info[PATH_TO_ATK] = my_strdup(origin->info[PATH_TO_ATK]);
 }
 
+void draw_info_inv(game_t *game)
+{
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->inv, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->name, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->attack_name, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->hp, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->attack, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->defense, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->tmp2->cost, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->cash, NULL);
+}
+
 void draw_info(game_t *game)
 {
     sfRenderWindow_drawText(game->window, game->combat->tmp->inv, NULL);
@@ -35,11 +47,18 @@ void draw_info(game_t *game)
 
 void inventory(game_t *game, object_t *obj)
 {
+    sfSleep((sfTime) {100000});
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
     if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
         if (obj->moused == 1)
             game->screen = 1;
+    }
+    if (game->combat->inv->next == NULL)
+        ;
+    else {
+        draw_info_inv(game);
+        sfRenderWindow_drawSprite(game->window, game->combat->tmp2->spr->spr, NULL);
     }
 }
 
