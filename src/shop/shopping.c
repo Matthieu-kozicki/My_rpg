@@ -20,7 +20,7 @@ void dup_info(poke_t *tmp, poke_t *origin)
     tmp->cost = sfText_copy(origin->cost);
 }
 
-void shopping(game_t *game, object_t *obj)
+void shopping(game_t *game)
 {
     poke_t *tmp = NULL;
 
