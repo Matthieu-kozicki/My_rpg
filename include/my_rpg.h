@@ -132,6 +132,9 @@ void free_array(int y, char **tab);
 char **map(int count, char **tab);
 void display_array(int y, char **tab);
 
+//shop.c
+void shopping(game_t *game, object_t *obj);
+
 //combat.c
 void attack(int attacker, game_t *game);
 void combat_loop(game_t *game, object_t *obj);

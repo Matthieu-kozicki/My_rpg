@@ -43,6 +43,7 @@ void inventory(game_t *game, object_t *obj)
         game->combat->tmp = game->combat->list;
     sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
     draw_info(game);
+    shopping(game, obj);
     if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
         if (obj->moused == 1)

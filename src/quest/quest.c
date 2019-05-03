@@ -22,8 +22,12 @@ void dialogue(game_t *game, object_t *obj)
     if (obj->quest == 2)
         sfRenderWindow_drawSprite(game->window, obj[40].spr, NULL);
     if (game->pos_x == 27 && game->pos_y == 94
-        && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 2)
+        && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 2) {
         obj->quest = 3;
+        game->combat->money += 500;
+        sfText_setString(game->combat->cash,
+                        intstr(game->combat->money, nb_digits(game->combat->money)));
+    }
     if (game->pos_x == 19 && game->pos_y == 47
         && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 4)
         obj->quest = 5;
