@@ -37,7 +37,7 @@ void inventory(game_t *game, object_t *obj)
 {
     sfSleep((sfTime) {150000});
     sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
-    if (game->combat->tmp->next->next != NULL && sfKeyboard_isKeyPressed(sfKeyRight))
+    if (game->combat->tmp->next->next != NULL && sfKeyboard_isKeyPressed(sfKeySpace))
         game->combat->tmp = game->combat->tmp->next;
     if (game->combat->tmp->next->next == NULL)
         game->combat->tmp = game->combat->list;

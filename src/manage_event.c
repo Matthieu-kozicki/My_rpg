@@ -17,7 +17,6 @@ void rand_combat(game_t *game, object_t *obj)
     if (game->stock == 'B' && game->screen == 1 && obj->quest >= 2) {
         n = randint(0, 100);
         if (n > 80) {
-            printf("%s\n", "FIGHT");
             find_randpoke(game);
             load_poke_sprites(game->combat);
             game->screen = 5;
@@ -48,7 +47,6 @@ void manage_events(game_t *game, object_t *obj)
 
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         game->mouse = sfMouse_getPositionRenderWindow(game->window);
-        //printf("x : %d | y : %d\n", game->mouse.x, game->mouse.y);
         if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyDelete))
             sfRenderWindow_close(game->window);
         if (event.type == sfEvtMouseButtonPressed)

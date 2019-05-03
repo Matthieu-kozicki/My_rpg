@@ -33,7 +33,7 @@ void init_combat(combat_t *combat)
     combat->list = malloc(sizeof(poke_t));
     combat->list->spr = malloc(sizeof(object_t));
     combat->list->next = NULL;
-    if (poke_init(combat->list) != 0) printf("Err loading poke\n");
+    if (poke_init(combat->list) != 0) write(1, "Err loading poke\n", 17);
     create_spr_list(combat->list);
 }
 

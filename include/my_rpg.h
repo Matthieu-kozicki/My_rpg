@@ -119,7 +119,7 @@ typedef struct button_s
     char *but_text;
 } button_t;
 
-//add_functions.c
+//math_function.c
 void move_rect(sfIntRect *rect, int offset, int max_value);
 char *my_strcat(char *dest, char const *src);
 float randfloat(float min, float max);
