@@ -39,6 +39,7 @@ void init_game_variables2(game_t *game, object_t *obj)
     game->stock = ' ';
     game->combat->tmp = game->combat->list;
     game->combat->money = 2000;
+    game->combat->cash = texted(game->combat->cash, (sfVector2f) {820, 520}, "2000");
 }
 
 void init_game_variables(game_t *game, object_t *obj)

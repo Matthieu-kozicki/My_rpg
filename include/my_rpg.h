@@ -80,6 +80,8 @@ typedef struct combat_s {
     float seconds[3];
     float difficulty;
     poke_t poke[2];
+    poke_t *inv;
+    poke_t *tmp2;
     poke_t *tmp;
     poke_t *list;
 } combat_t;
@@ -190,6 +192,7 @@ object_t *load_object3(object_t *obj);
 //inventory.c
 void inventory(game_t *game, object_t *obj);
 void dup_poke(poke_t *origin, poke_t *dup);
+sfText *texted(sfText *text, sfVector2f pos, char *str);
 
 //manag_map.c
 int check_pos(game_t *game);
@@ -198,6 +201,7 @@ char last_pos(char c, int space_y, int space_x, game_t *game);
 
 //manage_event.c
 void manage_events(game_t *game, object_t *obj);
+void rand_combat(game_t *game, object_t *obj);
 
 //mouve_hero.c
 void move_hero_1(sfEvent event, object_t *obj, game_t *game);

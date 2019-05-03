@@ -30,6 +30,7 @@ void draw_info(game_t *game)
     sfRenderWindow_drawText(game->window, game->combat->tmp->attack, NULL);
     sfRenderWindow_drawText(game->window, game->combat->tmp->defense, NULL);
     sfRenderWindow_drawText(game->window, game->combat->tmp->cost, NULL);
+    sfRenderWindow_drawText(game->window, game->combat->cash, NULL);
 }
 
 void inventory(game_t *game, object_t *obj)
