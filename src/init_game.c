@@ -41,6 +41,7 @@ void init_game_variables2(game_t *game, object_t *obj)
     game->combat->money = 2000;
     game->combat->cash = texted(game->combat->cash, (sfVector2f) {820, 520}, "2000");
     game->combat->inv = malloc(sizeof(poke_t));
+    game->combat->inv->next = NULL;
     game->combat->tmp2 = game->combat->inv;
 }
 
