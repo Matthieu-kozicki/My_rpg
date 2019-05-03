@@ -15,7 +15,7 @@ void shopping(game_t *game, object_t *obj)
         && game->combat->money > game->combat->tmp->stats[COST]) {
         game->combat->money -= game->combat->tmp->stats[COST];
         sfText_setString(game->combat->cash,
-                         intstr(game->combat->money, nb_digits(game->combat->money)));
+        intstr(game->combat->money, nb_digits(game->combat->money)));
         tmp = add_to_list(game->combat->inv);
         dup_poke(game->combat->tmp, tmp);
     }
