@@ -36,3 +36,25 @@ long randint(long min, long max)
 {
     return((rand() % (max - min + 1)) + min);
 }
+
+int my_getnbr(char const *str)
+{
+    int i = 0;
+    int result = 0;
+    int nb = 0;
+    int neg = 0;
+
+    if (str[i] == '-') {
+        neg = 1;
+        i++;
+    }
+    while (str[i] != '\0' && str[i] > 47 && str[i] < 58) {
+        result *= 10;
+        nb = str[i] - 48;
+        result += nb;
+        i++;
+    }
+    if (neg == 1)
+        result *= -1;
+    return (result);
+}

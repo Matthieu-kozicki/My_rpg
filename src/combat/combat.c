@@ -50,11 +50,11 @@ int checker(int index, char *line, poke_t *poke)
     if (index == 2) poke->info[1] = my_strdup(line);
     if (index == 3) poke->info[2] = my_strdup(line);
     if (index == 4) poke->info[3] = my_strdup(line);
-    if (index == 5) poke->stats[0] = atoi(line);
-    if (index == 6) poke->stats[1] = atoi(line);
-    if (index == 7) poke->stats[2] = atoi(line);
-    if (index == 8) poke->stats[3] = atoi(line);
-    if (index == 9) poke->stats[4] = atoi(line);
+    if (index == 5) poke->stats[0] = my_getnbr(line);
+    if (index == 6) poke->stats[1] = my_getnbr(line);
+    if (index == 7) poke->stats[2] = my_getnbr(line);
+    if (index == 8) poke->stats[3] = my_getnbr(line);
+    if (index == 9) poke->stats[4] = my_getnbr(line);
     if (index == 10 && (cmp_str("[END]", line, 5) != 1)) return (184);
     return (0);
 }

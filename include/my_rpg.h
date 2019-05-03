@@ -124,6 +124,7 @@ void move_rect(sfIntRect *rect, int offset, int max_value);
 char *my_strcat(char *dest, char const *src);
 float randfloat(float min, float max);
 long randint(long min, long max);
+int my_getnbr(char const *str);
 
 //array.c
 char **make_array(int x, int y);
@@ -153,7 +154,7 @@ int calculate_atk(int attacker, combat_t *combat);
 
 //list.c
 poke_t *add_to_list(poke_t *list);
-void print_list(poke_t *list);
+int size_list(poke_t *list);
 void create_spr_list(poke_t *list);
 void find_randpoke(game_t *game);
 
