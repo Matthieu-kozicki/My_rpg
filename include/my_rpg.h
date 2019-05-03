@@ -44,6 +44,28 @@ enum info {
     PATH_TO_ATK
 };
 
+enum type {
+    FIRE = 3,
+    WATER = 500,
+    LEAF = 5,
+    ROCK = 4,
+    NORMAL = 4,
+    ELECT = 6
+};
+
+typedef struct particle_s {
+    enum type type;
+    sfCircleShape **pixels;
+    float speed;
+    float time;
+    sfColor color;
+    int mutation;
+    int started;
+    int size;
+    float spacing;
+    sfVector2f pos[2];
+} particle_t;
+
 typedef struct object_s {
     sfVector2f vector;
     sfVector2f pos;
@@ -83,6 +105,7 @@ typedef struct combat_s {
     poke_t *tmp2;
     poke_t *tmp;
     poke_t *list;
+    particle_t *particles;
 } combat_t;
 
 typedef struct game_s {
@@ -117,6 +140,22 @@ typedef struct button_s
     sfSprite *but;
     char *but_text;
 } button_t;
+
+//create.c
+void particle_create(particle_t *particle, int size, enum type type, float radius);
+void particle_draw(game_t *game, particle_t *particles);
+sfColor particle_getcolor(enum type type);
+int particle_getpoints(enum type type);
+void particle_end(particle_t *particle, int i, sfVector2f *tmp, sfColor *col);
+
+//launch.c
+void particle_setparam(particle_t *particle, sfVector2f start, sfVector2f end, float spacing);
+void particle_launch(particle_t *particle, float speed, sfVector2f scale, float time);
+void particle_update(particle_t *particle, sfClock *clock, float time);
+void mutation(int i, sfVector2f *pos, particle_t *particle);
+
+//mutations.c
+void mu_color(sfColor *color, particle_t *particle);
 
 //math_function.c
 void move_rect(sfIntRect *rect, int offset, int max_value);

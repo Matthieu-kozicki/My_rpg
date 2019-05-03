@@ -50,4 +50,5 @@ void load_poke_sprites(combat_t *combat)
     sfSprite_setScale(combat->spr[1], (sfVector2f){-1.3, 1.3});
     sfSprite_setPosition(combat->spr[1], (sfVector2f){550, 300});
     sfSprite_setPosition(combat->spr[0], (sfVector2f){1080, 150});
+    combat->particles = malloc(sizeof(particle_t) * 2);
 }
