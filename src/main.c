@@ -22,6 +22,9 @@ int help(void)
     write(1,"Q on keyboard : to move on the left\n",36);
     write(1,"D on keyboard : to move on the right\n",37);
     write(1,"I on keyboard : to open the inventory\n",38);
+    write(1,"Suppr to leave the game\n", 24);
+    write(1,"Escape to pause the game\n\n", 26);
+    write(1, "GOOD LUCK AND HAVE FUN!!\n", 25);
     return (0);
 }
 
