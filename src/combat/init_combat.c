@@ -18,9 +18,8 @@ void init_text(sfFont *font, char *str, sfVector2f pos, sfText *text)
 
 void init_combat(combat_t *combat)
 {
-    combat->clock[0] = sfClock_create();
-    combat->clock[1] = sfClock_create();
-    combat->clock[2] = sfClock_create();
+    for (int i = 0; i != 5; i++)
+        combat->clock[i] = sfClock_create();
     combat->texts[0] = sfText_create();
     combat->texts[1] = sfText_create();
     combat->texts[2] = sfText_create();
@@ -50,5 +49,6 @@ void load_poke_sprites(combat_t *combat)
     sfSprite_setScale(combat->spr[1], (sfVector2f){-1.3, 1.3});
     sfSprite_setPosition(combat->spr[1], (sfVector2f){550, 300});
     sfSprite_setPosition(combat->spr[0], (sfVector2f){1080, 150});
-    combat->particles = malloc(sizeof(particle_t) * 2);
+    particle_create(&combat->particles[0], randint(30, 500), WATER, randfloat(0.5, 5));
+    particle_create(&combat->particles[1], randint(30, 500), ELECT, randfloat(0.5, 5));
 }

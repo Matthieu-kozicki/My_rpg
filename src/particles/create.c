@@ -56,10 +56,8 @@ void particle_end(particle_t *particle, int i, sfVector2f *tmp, sfColor *col)
     if (tmp->x >= particle->pos[1].x && tmp->x <= particle->pos[1].x + particle->size*4 &&
     tmp->y <= particle->pos[1].y + particle->size*4 && tmp->y >= particle->pos[1].y) {
         col->a = 0;
-        printf("bam\n");
     }
     if (i == particle->size - 1 && col->a <= 0) {
-        printf("END\n");
         particle->started = 0;
     }
 }

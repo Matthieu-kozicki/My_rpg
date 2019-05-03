@@ -96,16 +96,16 @@ typedef struct combat_s {
     sfFont *font;
     int money;
     sfText *cash;
-    sfClock *clock[3];
-    sfTime time[3];
-    float seconds[3];
+    sfClock *clock[5];
+    sfTime time[5];
+    float seconds[5];
     float difficulty;
     poke_t poke[2];
     poke_t *inv;
     poke_t *tmp2;
     poke_t *tmp;
     poke_t *list;
-    particle_t *particles;
+    particle_t particles[2];
 } combat_t;
 
 typedef struct game_s {

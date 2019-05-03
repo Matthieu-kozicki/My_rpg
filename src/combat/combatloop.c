@@ -71,6 +71,10 @@ void combat_loop(game_t *game, object_t *obj)
     cursor_conditions(game);
     move_cursor(game, obj);
     combat_ia(game, game->combat->difficulty);
+    particle_update(&game->combat->particles[1], game->combat->clock[3], 0.001);
+    particle_update(&game->combat->particles[0], game->combat->clock[4], 0.001);
+    particle_draw(game, &game->combat->particles[1]);
+    particle_draw(game, &game->combat->particles[0]);
     if (game->screen == 5 && game->cursor_pos == 3 &&
         sfKeyboard_isKeyPressed(sfKeyReturn)) {
         game->screen = 1;
@@ -80,6 +84,10 @@ void combat_loop(game_t *game, object_t *obj)
         sfKeyboard_isKeyPressed(sfKeyReturn)) {
         if (game->combat->seconds[0] >= 0.2) {
             attack(1, game);
+            particle_setparam(&game->combat->particles[1],
+            (sfVector2f){532, 414}, (sfVector2f){1085, 245}, 2);
+            particle_launch(&game->combat->particles[1],
+            randfloat(1, 5), (sfVector2f){3, 3}, 0.001);
             sfClock_restart(game->combat->clock[0]);
         }
     }
