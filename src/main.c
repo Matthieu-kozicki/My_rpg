@@ -16,14 +16,14 @@ void destroy_game(game_t *game)
 
 int help(void)
 {
-    write(1,"A RPG game created with CSFML.\n\n\n",33);
-    write(1,"Z on keyboard : to move foreward\n",33);
-    write(1,"S on keyboard : to move backward\n",33);
-    write(1,"Q on keyboard : to move on the left\n",36);
-    write(1,"D on keyboard : to move on the right\n",37);
-    write(1,"I on keyboard : to open the inventory\n",38);
-    write(1,"Suppr to leave the game\n", 24);
-    write(1,"Escape to pause the game\n\n", 26);
+    write(1, "A RPG game created with CSFML.\n\n\n", 33);
+    write(1, "Z on keyboard : to move foreward\n", 33);
+    write(1, "S on keyboard : to move backward\n", 33);
+    write(1, "Q on keyboard : to move on the left\n", 36);
+    write(1, "D on keyboard : to move on the right\n", 37);
+    write(1, "I on keyboard : to open the inventory\n", 38);
+    write(1, "Suppr to leave the game\n", 24);
+    write(1, "Escape to pause the game\n\n", 26);
     write(1, "GOOD LUCK AND HAVE FUN!!\n", 25);
     return (0);
 }
@@ -37,7 +37,7 @@ int main(int arc, char **arg, char **env)
         return (help());
     if (arc != 1 || env[0] == NULL) {
         write(2, "Bad Argument\n", 13);
-	return (84);
+        return (84);
     }
     if (check_env(env) == 0)
         return (84);
