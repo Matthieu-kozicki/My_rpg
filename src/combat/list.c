@@ -49,19 +49,19 @@ void create_spr_list(poke_t *list)
         "ense :\n\nCost :\n\nMoney :";
     while (tmp->next != NULL) {
         *tmp->spr = create_object(tmp->info[PATH_TO_SPRITE],
-                                  (sfVector2f){150, 285});
+        (sfVector2f){150, 285});
         tmp->inv = texted(tmp->inv, (sfVector2f) {600, 75}, str);
         tmp->name = texted(tmp->name, (sfVector2f) {90, 50}, tmp->info[NAME]);
         tmp->attack_name = texted(tmp->attack_name, (sfVector2f) {950, 75},
-                                  tmp->info[ATK_NAME]);
+        tmp->info[ATK_NAME]);
         tmp->hp = texted(tmp->hp, (sfVector2f) {950, 170},
-                        intstr(tmp->stats[HP],nb_digits(tmp->stats[HP])));
+        intstr(tmp->stats[HP], nb_digits(tmp->stats[HP])));
         tmp->attack = texted(tmp->attack, (sfVector2f) {840,
-                    260},intstr(tmp->stats[ATK],nb_digits(tmp->stats[ATK])));
+        260}, intstr(tmp->stats[ATK], nb_digits(tmp->stats[ATK])));
         tmp->defense = texted(tmp->defense, (sfVector2f) {865,
-                    350},intstr(tmp->stats[DEF],nb_digits(tmp->stats[DEF])));
-        tmp->cost = texted(tmp->cost, (sfVector2f) {820, 440},
-                           intstr(tmp->stats[COST],nb_digits(tmp->stats[COST])));
+        350}, intstr(tmp->stats[DEF], nb_digits(tmp->stats[DEF])));
+        tmp->cost = texted(tmp->cost, (sfVector2f){820, 440},
+        intstr(tmp->stats[COST], nb_digits(tmp->stats[COST])));
         tmp = tmp->next;
     }
 }
@@ -88,6 +88,6 @@ void find_randpoke(game_t *game)
     dup_poke(tmp, &game->combat->poke[0]);
     game->combat->difficulty = randfloat(3, 7);
     game->combat->poke[0].stats[HP] = randint(20, 80);
-    game->combat->poke[0].stats[DEF] = randint(0, 10);   
-    game->combat->poke[0].stats[ATK] = randint(0, 10);   
+    game->combat->poke[0].stats[DEF] = randint(0, 10);
+    game->combat->poke[0].stats[ATK] = randint(0, 10);
 }
