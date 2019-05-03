@@ -172,7 +172,7 @@ char **map(int count, char **tab);
 void display_array(int y, char **tab);
 
 //shop.c
-void shopping(game_t *game, object_t *obj);
+void shopping(game_t *game);
 
 //combat.c
 void attack(int attacker, game_t *game);

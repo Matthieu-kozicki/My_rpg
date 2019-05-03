@@ -85,5 +85,6 @@ object_t *load_object3(object_t *obj)
     1356 - 39});
     obj[40] = create_object("pictures/text1.png", (sfVector2f){346, 1518});
     obj[41] = create_object("pictures/text2.png", (sfVector2f){218, 768});
+    obj[42] = create_object("pictures/shop.png", (sfVector2f){0, 0});
     return (obj);
 }

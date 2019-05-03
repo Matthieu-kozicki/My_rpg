@@ -57,6 +57,10 @@ void inventory(game_t *game, object_t *obj)
     if (game->combat->inv->next == NULL)
         ;
     else {
+        if (game->combat->tmp2->next->next != NULL && sfKeyboard_isKeyPressed(sfKeySpace))
+            game->combat->tmp2 = game->combat->tmp2->next;
+        if (game->combat->tmp2->next == NULL)
+            game->combat->tmp2 = game->combat->inv;
         draw_info_inv(game);
         sfRenderWindow_drawSprite(game->window, game->combat->tmp2->spr->spr, NULL);
     }
@@ -65,14 +69,14 @@ void inventory(game_t *game, object_t *obj)
 void shop(game_t *game, object_t *obj)
 {
     sfSleep((sfTime) {100000});
-    sfRenderWindow_drawSprite(game->window, obj[34].spr, NULL);
+    sfRenderWindow_drawSprite(game->window, obj[42].spr, NULL);
     if (game->combat->tmp->next->next != NULL && sfKeyboard_isKeyPressed(sfKeySpace))
         game->combat->tmp = game->combat->tmp->next;
     if (game->combat->tmp->next->next == NULL)
         game->combat->tmp = game->combat->list;
     sfRenderWindow_drawSprite(game->window, game->combat->tmp->spr->spr, NULL);
     draw_info(game);
-    shopping(game, obj);
+    shopping(game);
     if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
         if (obj->moused == 1)
