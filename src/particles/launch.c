@@ -28,14 +28,14 @@ void particle_launch(particle_t *particle, float speed, sfVector2f scale, float 
 sfVector2f mvect(sfVector2f *tmp, particle_t *particle, float radius)
 {
     if (tmp->x > particle->pos[1].x)
-        tmp->x -= particle->speed + radius*2;
+        tmp->x -= particle->speed + radius;
     else if (tmp->x < particle->pos[1].x)
-        tmp->x += particle->speed + radius*2;
+        tmp->x += particle->speed + radius;
     else tmp->x = particle->pos[1].x;
     if (tmp->y > particle->pos[1].y)
-        tmp->y -= particle->speed + radius*2;
+        tmp->y -= particle->speed + radius;
     else if (tmp->y < particle->pos[1].y)
-        tmp->y += particle->speed + radius*2;
+        tmp->y += particle->speed + radius;
     else tmp->y = particle->pos[1].y;
     return (*tmp);
 }
@@ -70,8 +70,8 @@ void particle_update(particle_t *particle, sfClock *clock, float time)
         tmp = sfCircleShape_getPosition(particle->pixels[i]);
         if (tmp.x == particle->pos[0].x && tmp.y == particle->pos[0].y) {
             mvect(&tmp, particle, particle->spacing);
-            tmp.x += randfloat(-30.0, 30.0);
-            tmp.y += randfloat(-30.0, 30.0);
+            tmp.x += randfloat(-80.0, 80.0);
+            tmp.y += randfloat(-80.0, 80.0);
             sfCircleShape_setPosition(particle->pixels[i], tmp);
             mutation(i, &tmp, particle);
             return;

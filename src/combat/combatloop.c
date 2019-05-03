@@ -10,7 +10,7 @@
 void attack(int attacker, game_t *game)
 {
     if (attacker == 0) {
-        game->combat->tmp->stats[HP] -=
+        game->combat->tmp2->stats[HP] -=
         calculate_atk(attacker, game->combat);
     }
     if (attacker == 1) {
@@ -28,8 +28,8 @@ void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
     sfText_setString(game->combat->texts[1],
         intstr(game->combat->poke[0].stats[HP], nb_digits(game->combat->poke[0].stats[HP])));
     sfText_setString(game->combat->texts[0],
-        intstr(game->combat->tmp->stats[HP], nb_digits(game->combat->tmp->stats[HP])));
-    sfText_setString(game->combat->texts[2], game->combat->tmp->info[NAME]);
+        intstr(game->combat->tmp2->stats[HP], nb_digits(game->combat->tmp2->stats[HP])));
+    sfText_setString(game->combat->texts[2], game->combat->tmp2->info[NAME]);
     sfText_setString(game->combat->texts[3], game->combat->poke[0].info[NAME]);
     sfRenderWindow_drawText(window, game->combat->texts[0], NULL);
     sfRenderWindow_drawText(window, game->combat->texts[1], NULL);
@@ -85,14 +85,14 @@ void combat_loop(game_t *game, object_t *obj)
         if (game->combat->seconds[0] >= 0.2) {
             attack(1, game);
             particle_setparam(&game->combat->particles[1],
-            (sfVector2f){532, 414}, (sfVector2f){1085, 245}, 2);
+            (sfVector2f){532, 414}, (sfVector2f){1120, 245}, 2);
             particle_launch(&game->combat->particles[1],
-            randfloat(1, 5), (sfVector2f){3, 3}, 0.001);
+            randfloat(4, 10), (sfVector2f){1, 1}, 0.001);
             sfClock_restart(game->combat->clock[0]);
         }
     }
     if (game->combat->poke[0].stats[HP] <= 0 ||
-        game->combat->tmp->stats[HP]<= 0) {
+        game->combat->tmp2->stats[HP]<= 0) {
         game->screen = 1;
         game->cursor_pos = 0;
     }

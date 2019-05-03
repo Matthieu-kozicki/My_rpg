@@ -106,6 +106,7 @@ typedef struct combat_s {
     poke_t *tmp;
     poke_t *list;
     particle_t particles[2];
+    int winner;
 } combat_t;
 
 typedef struct game_s {

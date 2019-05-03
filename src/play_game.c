@@ -42,7 +42,7 @@ void play_game(game_t *game, object_t *obj)
         sfSleep((sfTime) {200000});
     }
     if (game->pos_x == 28 && game->pos_y == 87
-        && sfKeyboard_isKeyPressed(sfKeyE)) {
+        && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest >= 3) {
         game->screen = 6;
         sfSleep((sfTime) {200000});
     }

@@ -33,9 +33,9 @@ void combat_ia(game_t *game, float difficulty)
         attack_time = randfloat(0.5, 10 - difficulty);
         attack(0, game);
         particle_setparam(&game->combat->particles[0],
-        (sfVector2f){1085, 245}, (sfVector2f){532, 414}, 2);
+        (sfVector2f){1085, 245}, (sfVector2f){400, 510}, 2);
         particle_launch(&game->combat->particles[0],
-        randfloat(1, 5), (sfVector2f){3, 3}, 0.001);
+        randfloat(4, 10), (sfVector2f){1, 1}, 0.001);
         sfClock_restart(game->combat->clock[1]);
     }
     /*heal_percent = randfloat(0.1, 100);
