@@ -76,6 +76,9 @@ void draw_combat_texts(game_t *game)
     sfText_setString(game->combat->texts[4],
     intstr(game->combat->tmp2->stats[HP],
     nb_digits(game->combat->tmp2->stats[HP])));
+    sfText_setString(game->combat->tmp2->hp,
+    intstr(game->combat->tmp2->stats[ACTUAL_HP],
+    nb_digits(game->combat->tmp2->stats[ACTUAL_HP])));
     sfText_setString(game->combat->texts[5],
     intstr(game->combat->poke[0].stats[HP],
     nb_digits(game->combat->poke[0].stats[HP])));
