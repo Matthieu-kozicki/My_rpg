@@ -34,7 +34,7 @@ float randfloat(float min, float max)
 
 long randint(long min, long max)
 {
-    return((rand() % (max - min + 1)) + min);
+    return ((rand() % (max - min + 1)) + min);
 }
 
 int my_getnbr(char const *str)
