@@ -33,9 +33,9 @@ sfVector2f mvect(sfVector2f *tmp, particle_t *particle, float radius)
         tmp->x += particle->speed + radius;
     else tmp->x = particle->pos[1].x;
     if (tmp->y > particle->pos[1].y)
-        tmp->y -= particle->speed + radius;
+        tmp->y -= particle->speed - radius -1;
     else if (tmp->y < particle->pos[1].y)
-        tmp->y += particle->speed + radius;
+        tmp->y += particle->speed + radius - 3;
     else tmp->y = particle->pos[1].y;
     return (*tmp);
 }
