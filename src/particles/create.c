@@ -49,6 +49,7 @@ void particle_create(particle_t *particle, int size, enum type type, float radiu
         particle_getcolor(type));
         sfCircleShape_setPosition(particle->pixels[i], (sfVector2f){-99999, 99999});
     }
+    particle->started = 0;
 }
 
 void particle_end(particle_t *particle, int i, sfVector2f *tmp, sfColor *col)
