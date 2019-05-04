@@ -21,6 +21,8 @@ void menu_option2(game_t *game, object_t *obj)
     sfRenderWindow_drawSprite(game->window, obj[23].spr, NULL);
     sfRenderWindow_drawSprite(game->window, obj[30].spr, NULL);
     keybinding(game, obj);
+    if (mouse_is_on(game, (sfVector2f){1500, 800}, 100, 100) == 1)
+        sfMusic_setVolume(game->music, 0);
 }
 
 void menu_option(game_t *game, object_t *obj)

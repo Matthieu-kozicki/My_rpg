@@ -44,6 +44,7 @@ void init_game_variables2(game_t *game, object_t *obj)
     game->combat->inv = malloc(sizeof(poke_t));
     game->combat->inv->next = NULL;
     game->combat->tmp2 = game->combat->inv;
+    obj[1].quest = 1;
 }
 
 void init_game_variables(game_t *game, object_t *obj)
