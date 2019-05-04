@@ -7,10 +7,12 @@
 
 #include "my_rpg.h"
 
-void destroy_game(game_t *game)
+void destroy_game(game_t *game, object_t *obj)
 {
     free_array(102, game->tab);
     sfRenderWindow_destroy(game->window);
+    for (int i =0; i <= 43; i++)
+        sfSprite_destroy(obj[i].spr);
     sfMusic_destroy(game->music);
 }
 
@@ -46,6 +48,6 @@ int main(int arc, char **arg, char **env)
     obj = load_object(obj);
     init_game_variables(game, obj);
     game_loop(game, obj);
-    destroy_game(game);
+    destroy_game(game, obj);
     return (0);
 }
