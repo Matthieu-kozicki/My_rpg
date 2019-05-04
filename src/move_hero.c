@@ -47,6 +47,10 @@ void move_hero_1(sfEvent event, object_t *obj, game_t *game)
     if (event.type == sfEvtKeyPressed && event.key.code == sfKeyZ
         && obj->quest % 2 != 0) {
         obj[4].rect.top = 50;
+        if (game->combat->inv->next == NULL &&
+        game->tab[game->pos_y - 1][game->pos_x + 0] == 'B') {
+            return;
+        }
         if (test_block(-1, 0, game) == 1) {
             move_ui(obj, (sfVector2f){0, -16}, game);
             game->tab[game->pos_y][game->pos_x] = game->stock;
