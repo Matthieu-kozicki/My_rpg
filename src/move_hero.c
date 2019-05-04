@@ -16,6 +16,7 @@ void move_ui(object_t *obj, sfVector2f vector, game_t *game)
     sfSprite_move(obj[39].spr, vector);
     sfView_move (game->view, vector);
     move_rect(&obj[4].rect, 50, 200);
+    sfMusic_play(game->step);
 }
 
 void add_function(object_t *obj, game_t *game)

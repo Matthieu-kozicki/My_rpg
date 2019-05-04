@@ -64,8 +64,10 @@ void inventory(game_t *game, object_t *obj)
     }
     if (mouse_is_on(game, (sfVector2f){43, 689}, 180, 150) == 1) {
         sfRenderWindow_drawSprite(game->window, obj[35].spr, NULL);
-        if (obj->moused == 1)
+        if (obj->moused == 1) {
             game->screen = 1;
+            sfMusic_play(game->inv);
+        }
     }
 }
 

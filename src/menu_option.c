@@ -7,6 +7,13 @@
 
 #include "my_rpg.h"
 
+void music_volume(game_t *game, float vol)
+{
+    sfMusic_setVolume(game->music, vol);
+    sfMusic_setVolume(game->step, vol);
+    sfMusic_setVolume(game->inv, vol);
+}
+
 void menu_option2(game_t *game, object_t *obj)
 {
     if (mouse_is_on(game, (sfVector2f){945, 520}, 20, 20) == 1) {
@@ -14,7 +21,7 @@ void menu_option2(game_t *game, object_t *obj)
             game->volume += 10;
             obj[27].rect.left += 123;
             sfSprite_setTextureRect(obj[27].spr, obj[27].rect);
-            sfMusic_setVolume(game->music, game->volume);
+            music_volume(game, game->volume);
             sfSleep((sfTime){150000});
         }
     }
@@ -44,7 +51,7 @@ void menu_option(game_t *game, object_t *obj)
             game->volume -= 10;
             obj[27].rect.left -= 123;
             sfSprite_setTextureRect(obj[27].spr, obj[27].rect);
-            sfMusic_setVolume(game->music, game->volume);
+            music_volume(game, game->volume);
             sfSleep((sfTime){150000});
         }
     }

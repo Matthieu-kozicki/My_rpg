@@ -116,6 +116,8 @@ typedef struct game_s {
     sfView *view;
     sfView *view_2;
     sfMusic *music;
+    sfMusic *step;
+    sfMusic *inv;
     float volume;
     int screen;
     sfClock *clock;

@@ -11,9 +11,11 @@ void destroy_game(game_t *game, object_t *obj)
 {
     free_array(102, game->tab);
     sfRenderWindow_destroy(game->window);
-    for (int i =0; i <= 45; i++)
+    for (int i = 0; i <= 46; i++)
         sfSprite_destroy(obj[i].spr);
     sfMusic_destroy(game->music);
+    sfMusic_destroy(game->inv);
+    sfMusic_destroy(game->step);
 }
 
 int help(void)
@@ -32,7 +34,7 @@ int help(void)
 
 int main(int arc, char **arg, char **env)
 {
-    object_t *obj = malloc(sizeof(object_t) * 46);
+    object_t *obj = malloc(sizeof(object_t) * 47);
     game_t *game = malloc(sizeof(game_t));
 
     if (arc == 2 && arg[1][0] == '-' && arg[1][1] == 'h' && !arg[1][2])

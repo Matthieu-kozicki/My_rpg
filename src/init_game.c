@@ -20,6 +20,8 @@ void load_window(game_t *game)
     game->clock = sfClock_create();
     game->clock_2 = sfClock_create();
     game->music = sfMusic_createFromFile("sound/music.ogg");
+    game->inv = sfMusic_createFromFile("sound/inventory.ogg");
+    game->step = sfMusic_createFromFile("sound/step.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
     game->combat = malloc(sizeof(combat_t));
