@@ -24,7 +24,7 @@ sfColor particle_getcolor(enum type type)
     if (type == WATER) return ((sfColor){0, 102, 255, 255});
     if (type == LEAF) return ((sfColor){51, 204, 51, 255});
     if (type == ELECT) return ((sfColor){255, 255, 0, 255});
-    return(sfWhite);
+    return (sfWhite);
 }
 
 void particle_draw(game_t *game, particle_t *particles)
