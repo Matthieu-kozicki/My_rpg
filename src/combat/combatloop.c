@@ -22,7 +22,7 @@ void attack(int attacker, game_t *game)
 void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
 {
     char *ppkminfo = malloc(sizeof(char) * 4 +
-    getmallocsize(game->combat->tmp2) + getmallocsize(&game->combat->poke[0]));
+    getmallocsize(game->combat->tmp2) + getmallocsize(&game->combat->poke[0]) + 1);
 
     sfRenderWindow_drawSprite(window, obj[28].spr, NULL);
     sfRenderWindow_drawSprite(window, obj[29].spr, NULL);
