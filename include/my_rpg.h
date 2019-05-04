@@ -188,6 +188,7 @@ int poke_init(poke_t *list);
 long randint(long min, long max);
 char *my_strdup(char *src);
 void check_win(game_t *game, object_t *obj);
+int getmallocsize(poke_t *poke);
 
 //combat_ia.c
 void combat_ia(game_t *game, float difficulty);
