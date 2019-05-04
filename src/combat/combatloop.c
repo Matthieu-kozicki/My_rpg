@@ -28,12 +28,8 @@ void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
     draw_combat_texts(game);
     sfText_setString(game->combat->texts[2], game->combat->tmp2->info[NAME]);
     sfText_setString(game->combat->texts[3], game->combat->poke[0].info[NAME]);
-    sfRenderWindow_drawText(window, game->combat->texts[0], NULL);
-    sfRenderWindow_drawText(window, game->combat->texts[1], NULL);
-    sfRenderWindow_drawText(window, game->combat->texts[2], NULL);
-    sfRenderWindow_drawText(window, game->combat->texts[3], NULL);
-    sfRenderWindow_drawText(window, game->combat->texts[4], NULL);
-    sfRenderWindow_drawText(window, game->combat->texts[5], NULL);
+    for (int i = 0; i != 8; i++)
+        sfRenderWindow_drawText(window, game->combat->texts[i], NULL);
 }
 
 void cursor_conditions(game_t *game)
@@ -66,11 +62,15 @@ void move_cursor(game_t *game, object_t *obj)
 
 void combat_loop(game_t *game, object_t *obj)
 {
+    static int test = 0;
+
+    test++;
     draw_combat_sprites(game->window, obj, game);
     cursor_conditions(game);
     move_cursor(game, obj);
     combat_ia(game, game->combat->difficulty);
-    particle_update(&game->combat->particles[1], game->combat->clock[3], 0.001);
+    if (test > 100)
+        particle_update(&game->combat->particles[1], game->combat->clock[3], 0.001);
     particle_update(&game->combat->particles[0], game->combat->clock[4], 0.001);
     particle_draw(game, &game->combat->particles[1]);
     particle_draw(game, &game->combat->particles[0]);
