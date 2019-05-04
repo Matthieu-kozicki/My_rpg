@@ -25,7 +25,7 @@ void shopping(game_t *game)
     poke_t *tmp = NULL;
 
     if (sfKeyboard_isKeyPressed(sfKeyE)
-        && game->combat->money > game->combat->tmp->stats[COST]) {
+        && game->combat->money >= game->combat->tmp->stats[COST]) {
         game->combat->money -= game->combat->tmp->stats[COST];
         sfText_setString(game->combat->cash,
         intstr(game->combat->money, nb_digits(game->combat->money)));
