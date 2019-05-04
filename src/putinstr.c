@@ -39,7 +39,7 @@ char *intstr(int nb, int digits)
         result[print] = '-';
         print = print + 1;
     }
-    if (nb == 0) return(zero());
+    if (nb == 0) return (zero());
     while (nb/digi >= 10)
         digi = digi * 10;
     for (int count = 0; digi >= 1; count++) {
