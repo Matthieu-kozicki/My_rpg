@@ -17,6 +17,9 @@ void check_win(game_t *game, object_t *obj)
         obj->quest < 8) {
         game->screen = 1;
         game->cursor_pos = 0;
+        game->combat->money += game->combat->difficulty * 100;
+        sfText_setString(game->combat->cash,
+        intstr(game->combat->money, nb_digits(game->combat->money)));
     }
     if (game->combat->poke[0].stats[ACTUAL_HP] <= 0 &&
         obj->quest == 8) {

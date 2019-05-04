@@ -26,7 +26,7 @@ void dialogue(game_t *game, object_t *obj)
         obj->quest = 3;
         game->combat->money += 500;
         sfText_setString(game->combat->cash,
-                        intstr(game->combat->money, nb_digits(game->combat->money)));
+        intstr(game->combat->money, nb_digits(game->combat->money)));
     }
     if (game->pos_x == 19 && game->pos_y == 47
         && sfKeyboard_isKeyPressed(sfKeyE) && obj->quest == 4)
