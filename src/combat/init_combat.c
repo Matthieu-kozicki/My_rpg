@@ -66,6 +66,6 @@ void load_poke_sprites(combat_t *combat)
     sfSprite_setScale(combat->spr[1], (sfVector2f){-1.3, 1.3});
     sfSprite_setPosition(combat->spr[1], (sfVector2f){550, 300});
     sfSprite_setPosition(combat->spr[0], (sfVector2f){1080, 150});
-    particle_create(&combat->particles[0], randint(30, 500), WATER, randfloat(3, 3.5));
-    particle_create(&combat->particles[1], randint(30, 500), ELECT, randfloat(3, 3.5));
+    particle_create(&combat->particles[0], randint(30, 500), WATER, randfloat(1, 3.5));
+    particle_create(&combat->particles[1], randint(30, 500), ELECT, randfloat(1, 3.5));
 }

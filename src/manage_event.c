@@ -42,7 +42,6 @@ void manage_events(game_t *game, object_t *obj)
 
     while (sfRenderWindow_pollEvent(game->window, &event)) {
         game->mouse = sfMouse_getPositionRenderWindow(game->window);
-        //printf("%d | %d\n", game->mouse.x, game->mouse.y);
         if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyDelete))
             sfRenderWindow_close(game->window);
         if (event.type == sfEvtMouseButtonPressed)
