@@ -74,5 +74,5 @@ void combat_loop(game_t *game, object_t *obj)
     particle_update(&game->combat->particles[0], game->combat->clock[4], 0.001);
     particle_draw(game, &game->combat->particles[1]);
     particle_draw(game, &game->combat->particles[0]);
-    combat_loop_next(game);
+    combat_loop_next(game, obj);
 }

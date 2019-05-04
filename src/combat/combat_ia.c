@@ -39,7 +39,7 @@ void combat_ia(game_t *game, float difficulty)
     }
 }
 
-void combat_loop_next(game_t *game)
+void combat_loop_next(game_t *game, object_t *obj)
 {
     if (game->screen == 5 && game->cursor_pos == 3 &&
         sfKeyboard_isKeyPressed(sfKeyReturn)) {
@@ -57,11 +57,7 @@ void combat_loop_next(game_t *game)
             sfClock_restart(game->combat->clock[0]);
         }
     }
-    if (game->combat->poke[0].stats[ACTUAL_HP] <= 0 ||
-        game->combat->tmp2->stats[ACTUAL_HP]<= 0) {
-        game->screen = 1;
-        game->cursor_pos = 0;
-    }
+    check_win(game, obj);
 }
 
 

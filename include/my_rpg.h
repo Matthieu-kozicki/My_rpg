@@ -186,11 +186,12 @@ void load_poke_sprites(combat_t *combat);
 int poke_init(poke_t *list);
 long randint(long min, long max);
 char *my_strdup(char *src);
+void check_win(game_t *game, object_t *obj);
 
 //combat_ia.c
 void combat_ia(game_t *game, float difficulty);
 int calculate_atk(int attacker, combat_t *combat);
-void combat_loop_next(game_t *game);
+void combat_loop_next(game_t *game, object_t *obj);
 void draw_combat_texts(game_t *game);
 void set_combat_text(char *ehp, char *php, game_t *game);
 

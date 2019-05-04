@@ -18,6 +18,18 @@ int mouse_is_on(game_t *game, sfVector2f position, int x_max, int y_max)
     return (0);
 }
 
+void win_lose(game_t *game, object_t *obj)
+{
+    if (obj->quest <= 8)
+        sfRenderWindow_drawSprite(game->window, obj[44].spr, NULL);
+    else {
+        //set spr
+       sfRenderWindow_drawSprite(game->window, obj[45].spr, NULL);
+       sfRenderWindow_drawSprite(game->window,
+       game->combat->tmp2->spr->spr, NULL);
+    }
+}
+
 void game_loop(game_t *game, object_t *obj)
 {
     while (sfRenderWindow_isOpen(game->window)) {
@@ -35,6 +47,7 @@ void game_loop(game_t *game, object_t *obj)
         if (game->screen == 4) menu_option(game, obj);
         if (game->screen == 6) shop(game, obj);
         if (game->screen == 7) inventory(game, obj);
+        if (game->screen == 8) win_lose(game, obj);
         sfRenderWindow_display(game->window);
     }
 }
