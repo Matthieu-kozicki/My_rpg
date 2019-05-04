@@ -34,7 +34,7 @@ void combat_ia(game_t *game, float difficulty)
         particle_setparam(&game->combat->particles[0],
         (sfVector2f){1085, 245}, (sfVector2f){400, 510}, 2);
         particle_launch(&game->combat->particles[0],
-        randfloat(6, 10), (sfVector2f){1, 1}, 0.001);
+        randfloat(6, 10), (sfVector2f){randfloat(0.5, 1.5), randfloat(0.5, 1.5)}, 0.001);
         sfClock_restart(game->combat->clock[1]);
     }
 }
@@ -53,7 +53,7 @@ void combat_loop_next(game_t *game, object_t *obj)
             particle_setparam(&game->combat->particles[1],
             (sfVector2f){532, 414}, (sfVector2f){1120, 245}, 2);
             particle_launch(&game->combat->particles[1],
-            randfloat(6, 10), (sfVector2f){1, 1}, 0.001);
+            randfloat(6, 10), (sfVector2f){randfloat(0.5, 1.5), randfloat(0.5, 1.5)}, 0.001);
             sfClock_restart(game->combat->clock[0]);
         }
     }

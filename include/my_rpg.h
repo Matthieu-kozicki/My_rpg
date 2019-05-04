@@ -159,7 +159,7 @@ void particle_update(particle_t *particle, sfClock *clock, float time);
 void mutation(int i, sfVector2f *pos, particle_t *particle);
 
 //mutations.c
-void mu_color(sfColor *color, particle_t *particle);
+void mu_color(sfColor *color);
 
 //math_function.c
 void move_rect(sfIntRect *rect, int offset, int max_value);

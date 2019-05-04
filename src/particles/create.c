@@ -62,19 +62,3 @@ void particle_end(particle_t *particle, int i, sfVector2f *tmp, sfColor *col)
         particle->started = 0;
     }
 }
-/* PARTICLES TEST
-    game->particles[0] = sfVertexArray_create();
-    create_my_vertex(game->particles[0], 3, sfTriangles);
-    sfVertex test[4];
-    test[0].color = sfRed;
-    test[0].position = (sfVector2f){10, 10};
-    test[1].color = sfBlue;
-    test[1].position = (sfVector2f){100, 10};
-    test[2].color = sfGreen;
-    test[2].position = (sfVector2f){100, 150};
-    test[3].color = sfYellow;
-    test[3].position = (sfVector2f){0, 100};
-    sfVertexArray_append(game->particles[0], test[0]);
-    sfVertexArray_append(game->particles[0], test[1]);
-    sfVertexArray_append(game->particles[0], test[2]);
-*/

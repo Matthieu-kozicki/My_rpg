@@ -42,22 +42,17 @@ sfVector2f mvect(sfVector2f *tmp, particle_t *particle, float radius)
 
 void mutation(int i, sfVector2f *pos, particle_t *particle)
 {
-    sfColor tmp = sfCircleShape_getFillColor(particle->pixels[i]);;
+    sfColor tmp = sfCircleShape_getFillColor(particle->pixels[i]);
+    sfColor tmpp = sfCircleShape_getOutlineColor(particle->pixels[i]);
+
 
     if (particle->started == 0) return;
-    if (particle->type == ROCK)
-        sfCircleShape_rotate(particle->pixels[i], randfloat(-10.0, 10.0));
-    if (particle->type == ELECT) {
-        sfCircleShape_rotate(particle->pixels[i], randfloat(-30.0, 30.0));
-        sfCircleShape_setPointCount(particle->pixels[i], randint(3, 10));
-        mu_color(&tmp, particle);
-        sfCircleShape_setFillColor(particle->pixels[i], tmp);
-    }
-    if (particle->type == WATER) {
-        sfCircleShape_rotate(particle->pixels[i], randfloat(-30.0, 30.0));
-        mu_color(&tmp, particle);
-
-    }
+    sfCircleShape_rotate(particle->pixels[i], randfloat(-80.0, 80.0));
+    sfCircleShape_setPointCount(particle->pixels[i], randint(0, 10));
+    mu_color(&tmp);
+    mu_color(&tmpp);
+    sfCircleShape_setFillColor(particle->pixels[i], tmp);
+    sfCircleShape_setOutlineColor(particle->pixels[i], tmp);
     particle_end(particle, i, pos, &tmp);
 }
 
