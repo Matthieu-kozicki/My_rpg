@@ -44,8 +44,10 @@ void manage_events(game_t *game, object_t *obj)
         game->mouse = sfMouse_getPositionRenderWindow(game->window);
         if (event.type == sfEvtClosed || sfKeyboard_isKeyPressed(sfKeyDelete))
             sfRenderWindow_close(game->window);
-        if (event.type == sfEvtMouseButtonPressed)
+        if (event.type == sfEvtMouseButtonPressed) {
             obj->moused = 1;
+            sfMusic_play(game->click);
+        }
         else obj->moused = 0;
         if (event.type == sfEvtMouseButtonReleased)
             obj->clicked = 1;

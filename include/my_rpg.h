@@ -118,6 +118,8 @@ typedef struct game_s {
     sfMusic *music;
     sfMusic *step;
     sfMusic *inv;
+    sfMusic *bad;
+    sfMusic *click;
     float volume;
     int screen;
     sfClock *clock;
