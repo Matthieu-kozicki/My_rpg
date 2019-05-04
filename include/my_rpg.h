@@ -92,7 +92,7 @@ typedef struct poke_s {
 
 typedef struct combat_s {
     sfSprite *spr[2];
-    sfText *texts[4];
+    sfText *texts[8];
     sfFont *font;
     int money;
     sfText *cash;

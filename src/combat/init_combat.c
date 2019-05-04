@@ -20,10 +20,8 @@ void init_combat(combat_t *combat)
 {
     for (int i = 0; i != 5; i++)
         combat->clock[i] = sfClock_create();
-    combat->texts[0] = sfText_create();
-    combat->texts[1] = sfText_create();
-    combat->texts[2] = sfText_create();
-    combat->texts[3] = sfText_create();
+    for (int i = 0; i != 8; i++)
+        combat->texts[i] = sfText_create();
     combat->font = sfFont_createFromFile("police/font.ttf");  
     init_text(combat->font, "HP_PLAYER", (sfVector2f){1080, 404}, combat->texts[0]);
     init_text(combat->font, "HP_ENNEMY", (sfVector2f){204, 29}, combat->texts[1]);

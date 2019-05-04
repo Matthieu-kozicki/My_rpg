@@ -57,8 +57,8 @@ void combat_loop_next(game_t *game)
             sfClock_restart(game->combat->clock[0]);
         }
     }
-    if (game->combat->poke[0].stats[HP] <= 0 ||
-        game->combat->tmp2->stats[HP]<= 0) {
+    if (game->combat->poke[0].stats[ACTUAL_HP] <= 0 ||
+        game->combat->tmp2->stats[ACTUAL_HP]<= 0) {
         game->screen = 1;
         game->cursor_pos = 0;
     }

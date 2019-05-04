@@ -10,11 +10,11 @@
 void attack(int attacker, game_t *game)
 {
     if (attacker == 0) {
-        game->combat->tmp2->stats[HP] -=
+        game->combat->tmp2->stats[ACTUAL_HP] -=
         calculate_atk(attacker, game->combat);
     }
     if (attacker == 1) {
-        game->combat->poke[0].stats[HP] -=
+        game->combat->poke[0].stats[ACTUAL_HP] -=
         calculate_atk(attacker, game->combat);
     } 
 }
@@ -26,9 +26,11 @@ void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
     sfRenderWindow_drawSprite(window, game->combat->spr[0], NULL);
     sfRenderWindow_drawSprite(window, game->combat->spr[1], NULL);
     sfText_setString(game->combat->texts[1],
-        intstr(game->combat->poke[0].stats[HP], nb_digits(game->combat->poke[0].stats[HP])));
+    intstr(game->combat->poke[0].stats[ACTUAL_HP],
+    nb_digits(game->combat->poke[0].stats[ACTUAL_HP])));
     sfText_setString(game->combat->texts[0],
-        intstr(game->combat->tmp2->stats[HP], nb_digits(game->combat->tmp2->stats[HP])));
+    intstr(game->combat->tmp2->stats[ACTUAL_HP],
+    nb_digits(game->combat->tmp2->stats[ACTUAL_HP])));
     sfText_setString(game->combat->texts[2], game->combat->tmp2->info[NAME]);
     sfText_setString(game->combat->texts[3], game->combat->poke[0].info[NAME]);
     sfRenderWindow_drawText(window, game->combat->texts[0], NULL);
