@@ -25,8 +25,8 @@ void quest_next(game_t *game, object_t *obj)
         game->combat->poke[0].stats[DEF] = randint(5, 20);
         game->combat->poke[0].stats[ATK] = randint(10, 35);
         load_poke_sprites(game->combat);
-        game->screen = 5;
         obj->quest = 8;
+        game->screen = 5;
     }
 }
 

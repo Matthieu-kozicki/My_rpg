@@ -30,12 +30,13 @@ SRC	=	src/main.c			\
 		src/putinstr.c			\
 		src/clocks.c			\
 		src/inventory.c			\
-		src/particles/create.c	\
-		src/particles/launch.c	\
+		src/particles/create.c		\
+		src/particles/launch.c		\
 		src/particles/mutations.c	\
 		src/quest/quest.c		\
 		src/quest/int_to_char.c		\
-		src/shop/shopping.c
+		src/shop/shopping.c		\
+		src/combat/check_win.c
 
 OBJ	=	$(SRC:.c=.o)
 
