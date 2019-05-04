@@ -46,5 +46,17 @@ void play_game(game_t *game, object_t *obj)
         game->screen = 6;
         sfSleep((sfTime) {200000});
     }
+    if (obj->quest == 7) {
+        find_randpoke(game);
+        game->combat->difficulty = 6;
+        game->combat->poke[0].info[NAME] = "A S T E K";
+        game->combat->poke[0].info[ATK_NAME] = "Man Google !";        
+        game->combat->poke[0].stats[HP] = randint(90, 200);
+        game->combat->poke[0].stats[DEF] = randint(5, 15);
+        game->combat->poke[0].stats[ATK] = randint(5, 15);
+        load_poke_sprites(game->combat);
+        game->screen = 5;
+        obj->quest = 8;
+    }
     dialogue(game, obj);
 }

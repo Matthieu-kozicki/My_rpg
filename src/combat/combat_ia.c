@@ -27,7 +27,6 @@ int calculate_atk(int attacker, combat_t *combat)
 void combat_ia(game_t *game, float difficulty)
 {
     static int attack_time = 2;
-    //static float heal_percent = 100;
 
     if (game->combat->seconds[1] >= attack_time) {
         attack_time = randfloat(0.5, 10 - difficulty);
@@ -35,10 +34,32 @@ void combat_ia(game_t *game, float difficulty)
         particle_setparam(&game->combat->particles[0],
         (sfVector2f){1085, 245}, (sfVector2f){400, 510}, 2);
         particle_launch(&game->combat->particles[0],
-        randfloat(4, 10), (sfVector2f){1, 1}, 0.001);
+        randfloat(6, 10), (sfVector2f){1, 1}, 0.001);
         sfClock_restart(game->combat->clock[1]);
     }
-    /*heal_percent = randfloat(0.1, 100);
-    if (randfloat(0.1, difficulty * 10) > heal_percent)
-        game->combat->poke[1].stats[HP] += 10;*/
+}
+
+void combat_loop_next(game_t *game)
+{
+    if (game->screen == 5 && game->cursor_pos == 3 &&
+        sfKeyboard_isKeyPressed(sfKeyReturn)) {
+        game->screen = 1;
+        game->cursor_pos = 0;
+    }
+    if (game->screen == 5 && game->cursor_pos == 0 &&
+        sfKeyboard_isKeyPressed(sfKeyReturn)) {
+        if (game->combat->seconds[0] >= 0.2) {
+            attack(1, game);
+            particle_setparam(&game->combat->particles[1],
+            (sfVector2f){532, 414}, (sfVector2f){1120, 245}, 2);
+            particle_launch(&game->combat->particles[1],
+            randfloat(6, 10), (sfVector2f){1, 1}, 0.001);
+            sfClock_restart(game->combat->clock[0]);
+        }
+    }
+    if (game->combat->poke[0].stats[HP] <= 0 ||
+        game->combat->tmp2->stats[HP]<= 0) {
+        game->screen = 1;
+        game->cursor_pos = 0;
+    }
 }

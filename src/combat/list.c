@@ -86,8 +86,8 @@ void find_randpoke(game_t *game)
     for (int i = 1; tmp->next != NULL && i != random; i++)
         tmp = tmp->next;
     dup_poke(tmp, &game->combat->poke[0]);
-    game->combat->difficulty = randfloat(3, 7);
-    game->combat->poke[0].stats[HP] = randint(20, 80);
+    game->combat->difficulty = randfloat(3, 6);
+    game->combat->poke[0].stats[HP] = randint(20, 100);
     game->combat->poke[0].stats[DEF] = randint(0, 10);
     game->combat->poke[0].stats[ATK] = randint(0, 10);
 }

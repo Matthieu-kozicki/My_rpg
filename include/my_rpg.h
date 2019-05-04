@@ -190,6 +190,7 @@ char *my_strdup(char *src);
 //combat_ia.c
 void combat_ia(game_t *game, float difficulty);
 int calculate_atk(int attacker, combat_t *combat);
+void combat_loop_next(game_t *game);
 
 //list.c
 poke_t *add_to_list(poke_t *list);
