@@ -16,6 +16,12 @@ void menu2(game_t *game, object_t *obj)
         if (obj->clicked == 1)
             game->screen = 1;
     }
+    sfRenderWindow_drawSprite(game->window, obj[47].spr, NULL);
+    if (mouse_is_on(game, (sfVector2f){1530, 2}, 64, 64) == 1) {
+        sfRenderWindow_drawSprite(game->window, obj[48].spr, NULL);
+        if (obj->moused == 1)
+            sfRenderWindow_drawSprite(game->window, obj[46].spr, NULL);
+    }
 }
 
 void menu(game_t *game, object_t *obj)
