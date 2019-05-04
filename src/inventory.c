@@ -53,7 +53,7 @@ void inventory(game_t *game, object_t *obj)
     if (game->combat->inv->next == NULL)
         sfRenderWindow_drawSprite(game->window, obj[43].spr, NULL);
     else {
-        if (game->combat->tmp2->next->next != NULL
+        if (game->combat->tmp2->next != NULL
         && sfKeyboard_isKeyPressed(sfKeySpace))
             game->combat->tmp2 = game->combat->tmp2->next;
         if (game->combat->tmp2->next == NULL)
