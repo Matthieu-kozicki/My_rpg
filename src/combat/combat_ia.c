@@ -63,3 +63,26 @@ void combat_loop_next(game_t *game)
         game->cursor_pos = 0;
     }
 }
+
+
+void draw_combat_texts(game_t *game)
+{
+    sfText_setString(game->combat->texts[1],
+    intstr(game->combat->poke[0].stats[ACTUAL_HP],
+    nb_digits(game->combat->poke[0].stats[ACTUAL_HP])));
+    sfText_setString(game->combat->texts[0],
+    intstr(game->combat->tmp2->stats[ACTUAL_HP],
+    nb_digits(game->combat->tmp2->stats[ACTUAL_HP])));
+    sfText_setString(game->combat->texts[4],
+    intstr(game->combat->tmp2->stats[HP],
+    nb_digits(game->combat->tmp2->stats[HP])));
+    sfText_setString(game->combat->texts[5],
+    intstr(game->combat->poke[0].stats[HP],
+    nb_digits(game->combat->poke[0].stats[HP])));
+}
+
+void set_combat_text(char *ehp, char *php, game_t *game)
+{
+    sfText_setString(game->combat->texts[0], php);
+    sfText_setString(game->combat->texts[1], ehp);
+}

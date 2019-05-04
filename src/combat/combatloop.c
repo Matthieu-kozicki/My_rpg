@@ -25,18 +25,15 @@ void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
     sfRenderWindow_drawSprite(window, obj[29].spr, NULL);
     sfRenderWindow_drawSprite(window, game->combat->spr[0], NULL);
     sfRenderWindow_drawSprite(window, game->combat->spr[1], NULL);
-    sfText_setString(game->combat->texts[1],
-    intstr(game->combat->poke[0].stats[ACTUAL_HP],
-    nb_digits(game->combat->poke[0].stats[ACTUAL_HP])));
-    sfText_setString(game->combat->texts[0],
-    intstr(game->combat->tmp2->stats[ACTUAL_HP],
-    nb_digits(game->combat->tmp2->stats[ACTUAL_HP])));
+    draw_combat_texts(game);
     sfText_setString(game->combat->texts[2], game->combat->tmp2->info[NAME]);
     sfText_setString(game->combat->texts[3], game->combat->poke[0].info[NAME]);
     sfRenderWindow_drawText(window, game->combat->texts[0], NULL);
     sfRenderWindow_drawText(window, game->combat->texts[1], NULL);
     sfRenderWindow_drawText(window, game->combat->texts[2], NULL);
     sfRenderWindow_drawText(window, game->combat->texts[3], NULL);
+    sfRenderWindow_drawText(window, game->combat->texts[4], NULL);
+    sfRenderWindow_drawText(window, game->combat->texts[5], NULL);
 }
 
 void cursor_conditions(game_t *game)
