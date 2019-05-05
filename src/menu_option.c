@@ -7,6 +7,15 @@
 
 #include "my_rpg.h"
 
+void cheat(game_t *game, object_t *obj)
+{
+    if (sfKeyboard_isKeyPressed(sfKeyReturn) == sfFalse) return;
+    if (my_strcomp("MONEY", game->cheatcode->but_text) == 1)
+        game->combat->money = 424242;
+    if (my_strcomp("GOBY", game->cheatcode->but_text) == 1)
+        obj->quest = 5;
+}
+
 void music_volume(game_t *game, float vol)
 {
     sfMusic_setVolume(game->music, vol);
@@ -38,6 +47,7 @@ void menu_option2(game_t *game, object_t *obj)
         sfRectangleShape_setScale(game->cheatcode->rect, (sfVector2f){1, 1});
     }
     draw_textbox(game);
+    cheat(game, obj);
     if (mouse_is_on(game, (sfVector2f){1480, 800}, 120, 100) == 1
     && obj->moused == 1)
         sfMusic_setVolume(game->music, 0);

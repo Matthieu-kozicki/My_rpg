@@ -32,11 +32,11 @@ void keybinding(game_t *game, object_t *obj)
         bind_key(&event, game, UP);
     if (mouse_is_on(game, (sfVector2f){712, 220}, 80, 60) == 1
         && obj->moused == 1)
-        bind_key(&event, game, DOWN);     
+        bind_key(&event, game, DOWN);
     if (mouse_is_on(game, (sfVector2f){845, 220}, 80, 60) == 1
         && obj->moused == 1)
         bind_key(&event, game, LEFT);
     if (mouse_is_on(game, (sfVector2f){959, 220}, 80, 60) == 1
         && obj->moused == 1)
-        bind_key(&event, game, RIGHT);       
+        bind_key(&event, game, RIGHT);
 }
