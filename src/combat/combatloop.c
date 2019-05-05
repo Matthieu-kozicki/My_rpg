@@ -77,6 +77,7 @@ void combat_loop(game_t *game, object_t *obj)
 
     test++;
     if (sfMusic_getStatus(game->fight) == sfStopped) {
+        sfMusic_stop(game->music);
         sfMusic_play(game->fight);
         sfMusic_setLoop(game->fight, sfTrue);
     }

@@ -24,7 +24,7 @@ void rand_combat(game_t *game, object_t *obj)
     }
 }
 
-void manage_events_2(game_t *game, object_t *obj, sfEvent event)
+void manage_events_2(game_t *game, object_t *obj, sfEvent *event)
 {
     if (game->screen == 1) {
         game->time_2 = sfClock_getElapsedTime(game->clock_2);
@@ -35,7 +35,7 @@ void manage_events_2(game_t *game, object_t *obj, sfEvent event)
         }
     }
     if (game->screen == 4)
-        text_box_manager(game->cheatcode, game->window, &event);
+        text_box_manager(game->cheatcode, game->window, event);
 }
 
 void manage_events(game_t *game, object_t *obj)
@@ -56,6 +56,6 @@ void manage_events(game_t *game, object_t *obj)
         else obj->clicked = 0;
         if (sfKeyboard_isKeyPressed(sfKeyEscape) && game->screen == 1)
             game->screen = 2;
-        manage_events_2(game, obj, event);
+        manage_events_2(game, obj, &event);
     }
 }

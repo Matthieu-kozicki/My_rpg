@@ -275,7 +275,7 @@ void manage_events(game_t *game, object_t *obj);
 void rand_combat(game_t *game, object_t *obj);
 
 //mouve_hero.c
-void move_hero_1(sfEvent event, object_t *obj, game_t *game);
+void move_hero_1(sfEvent *event, object_t *obj, game_t *game);
 
 //menu.c
 void menu(game_t *game, object_t *obj);
