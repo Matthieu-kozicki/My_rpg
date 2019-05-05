@@ -54,6 +54,13 @@ enum type {
     ELECT = 6
 };
 
+enum inputs {
+    UP = 0,
+    DOWN = 1,
+    LEFT = 2,
+    RIGHT = 3
+};
+
 typedef struct particle_s {
     enum type type;
     sfCircleShape **pixels;
@@ -138,6 +145,7 @@ typedef struct game_s {
     int pos_x;
     int pos_y;
     char stock;
+    int inputs[4];
 } game_t;
 
 typedef struct button_s
@@ -216,6 +224,7 @@ void find_randpoke(game_t *game);
 
 //keybinding.c
 void keybinding(game_t *game, object_t *obj);
+void init_keys(game_t *game);
 
 //clocks.c
 void manage_clock(combat_t *combat);
