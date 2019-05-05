@@ -50,9 +50,13 @@ void menu(game_t *game, object_t *obj)
 
 void animation_next(game_t *game, object_t *obj, int i)
 {
+    int j =  i % 25;
+
     if (obj->moused == 1 || i > 280)
         game->screen = 3;
     sfRenderWindow_drawSprite(game->window, obj[0].spr, NULL);
+    if (j <= 22)
+        sfRenderWindow_drawSprite(game->window, obj[49].spr, NULL);
     sfClock_restart(game->clocka);
 }
 

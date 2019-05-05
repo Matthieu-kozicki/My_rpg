@@ -92,5 +92,6 @@ object_t *load_object3(object_t *obj)
     obj[46] = create_object("pictures/htp.png", (sfVector2f){0, 0});
     obj[47] = create_object("pictures/htp_1.png", (sfVector2f){1530, 2});
     obj[48] = create_object("pictures/htp_2.png", (sfVector2f){1530, 2});
+    obj[49] = create_object("pictures/load.png", (sfVector2f){958, 761});
     return (obj);
 }
