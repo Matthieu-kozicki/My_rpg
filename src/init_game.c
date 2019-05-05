@@ -24,6 +24,7 @@ void load_window(game_t *game)
     game->step = sfMusic_createFromFile("sound/step.ogg");
     game->bad = sfMusic_createFromFile("sound/bad_choice.ogg");
     game->click = sfMusic_createFromFile("sound/click.ogg");
+    game->dmg = sfMusic_createFromFile("sound/attack.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
     game->combat = malloc(sizeof(combat_t));
@@ -49,6 +50,7 @@ void init_game_variables2(game_t *game, object_t *obj)
     game->combat->inv->next = NULL;
     game->combat->tmp2 = game->combat->inv;
     obj[1].quest = 1;
+    game->buy = sfMusic_createFromFile("sound/money.ogg");
 }
 
 void init_game_variables(game_t *game, object_t *obj)

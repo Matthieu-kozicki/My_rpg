@@ -35,5 +35,6 @@ void shopping(game_t *game)
         tmp = add_to_list(game->combat->inv);
         dup_poke(game->combat->tmp, tmp);
         dup_info(tmp, game->combat->tmp);
+        sfMusic_play(game->buy);
     }
 }

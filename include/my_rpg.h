@@ -120,6 +120,8 @@ typedef struct game_s {
     sfMusic *inv;
     sfMusic *bad;
     sfMusic *click;
+    sfMusic *dmg;
+    sfMusic *buy;
     float volume;
     int screen;
     sfClock *clock;

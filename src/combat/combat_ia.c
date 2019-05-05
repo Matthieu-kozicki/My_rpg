@@ -50,6 +50,7 @@ void combat_loop_next(game_t *game, object_t *obj)
     if (game->screen == 5 && game->cursor_pos == 0 &&
         sfKeyboard_isKeyPressed(sfKeyReturn)) {
         if (game->combat->seconds[0] >= 0.2) {
+            sfMusic_play(game->dmg);
             attack(1, game);
             particle_setparam(&game->combat->particles[1],
             (sfVector2f){532, 414}, (sfVector2f){1120, 245}, 2);

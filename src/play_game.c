@@ -14,7 +14,6 @@ void quest_next(game_t *game, object_t *obj)
         game->screen = 6;
         sfSleep((sfTime) {200000});
     }
-
     if (obj->quest == 7) {
         find_randpoke(game);
         game->combat->difficulty = 6;
