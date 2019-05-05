@@ -76,6 +76,10 @@ void combat_loop(game_t *game, object_t *obj)
     static int test = 0;
 
     test++;
+    if (sfMusic_getStatus(game->fight) == sfStopped) {
+        sfMusic_play(game->fight);
+        sfMusic_setLoop(game->fight, sfTrue);
+    }
     draw_combat_sprites(game->window, obj, game);
     cursor_conditions(game);
     move_cursor(game, obj);

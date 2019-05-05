@@ -16,6 +16,7 @@ void music_volume(game_t *game, float vol)
     sfMusic_setVolume(game->bad, vol);
     sfMusic_setVolume(game->dmg, vol);
     sfMusic_setVolume(game->buy, vol);
+    sfMusic_setVolume(game->fight, vol);
 }
 
 void menu_option2(game_t *game, object_t *obj)

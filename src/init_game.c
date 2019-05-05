@@ -25,6 +25,7 @@ void load_window(game_t *game)
     game->bad = sfMusic_createFromFile("sound/bad_choice.ogg");
     game->click = sfMusic_createFromFile("sound/click.ogg");
     game->dmg = sfMusic_createFromFile("sound/attack.ogg");
+    game->fight = sfMusic_createFromFile("sound/combat.ogg");
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
     game->combat = malloc(sizeof(combat_t));

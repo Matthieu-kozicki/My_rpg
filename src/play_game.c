@@ -20,6 +20,7 @@ void quest_next(game_t *game, object_t *obj)
         game->combat->poke[0].info[NAME] = "A S T E K";
         game->combat->poke[0].info[ATK_NAME] = "Man Google !";
         game->combat->poke[0].stats[HP] = randint(90, 200);
+        game->combat->poke[0].stats[ACTUAL_HP] = game->combat->poke[0].stats[HP];
         game->combat->poke[0].stats[DEF] = randint(5, 20);
         game->combat->poke[0].stats[ATK] = randint(10, 35);
         load_poke_sprites(game->combat);

@@ -20,6 +20,7 @@ void destroy_game(game_t *game, object_t *obj)
     sfMusic_destroy(game->click);
     sfMusic_destroy(game->dmg);
     sfMusic_destroy(game->buy);
+    sfMusic_destroy(game->fight);
 }
 
 int help(void)
