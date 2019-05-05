@@ -53,6 +53,7 @@ void animation_next(game_t *game, object_t *obj, int i)
     if (obj->moused == 1 || i > 280)
         game->screen = 3;
     sfRenderWindow_drawSprite(game->window, obj[0].spr, NULL);
+    sfClock_restart(game->clocka);
 }
 
 void animation(game_t *game, object_t *obj)
@@ -60,6 +61,7 @@ void animation(game_t *game, object_t *obj)
     static int i = 0;
 
     i++;
+    if (game->seconda < 0.001) return;
     sfRenderWindow_drawSprite(game->window, obj[2].spr, NULL);
     if (i < 120) {
         sfSprite_rotate(obj[0].spr, 3);

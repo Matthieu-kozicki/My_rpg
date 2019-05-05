@@ -29,7 +29,7 @@ void load_window(game_t *game)
     sfMusic_setLoop(game->music, sfTrue);
     sfMusic_play(game->music);
     game->combat = malloc(sizeof(combat_t));
-    init_combat(game->combat);
+    init_combat(game->combat, game);
 }
 
 void init_game_variables2(game_t *game, object_t *obj)

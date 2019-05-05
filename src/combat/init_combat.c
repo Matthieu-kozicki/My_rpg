@@ -41,7 +41,7 @@ void init_c_text(combat_t *combat)
     init_text(combat->font, "", (sfVector2f){63, 760}, combat->texts[7]);
 }
 
-void init_combat(combat_t *combat)
+void init_combat(combat_t *combat, game_t *game)
 {
     for (int i = 0; i != 5; i++)
         combat->clock[i] = sfClock_create();
@@ -56,6 +56,7 @@ void init_combat(combat_t *combat)
     combat->list->next = NULL;
     if (poke_init(combat->list) != 0) write(1, "Err loading poke\n", 17);
     create_spr_list(combat->list);
+    game->clocka = sfClock_create();
 }
 
 void load_poke_sprites(combat_t *combat)

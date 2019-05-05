@@ -157,6 +157,9 @@ typedef struct game_s {
     char stock;
     int inputs[4];
     button_t *cheatcode;
+    sfClock *clocka;
+    sfTime timea;
+    float seconda;
 } game_t;
 
 //create.c
@@ -201,7 +204,7 @@ void combat_loop(game_t *game, object_t *obj);
 combat_t *init_combat_sprites(char **player_team, char **enmy_team);
 char **alloc_2d_array(int nb_rows, int nb_cols);
 int check_pokefile(char *path, poke_t *poke);
-void init_combat(combat_t *combat);
+void init_combat(combat_t *combat, game_t *game);
 void load_poke_sprites(combat_t *combat);
 int poke_init(poke_t *list);
 long randint(long min, long max);
@@ -228,7 +231,7 @@ void keybinding(game_t *game, object_t *obj);
 void init_keys(game_t *game);
 
 //clocks.c
-void manage_clock(combat_t *combat);
+void manage_clock(combat_t *combat, game_t *game);
 
 //putinstr.c
 char *intstr(int nb, int digits);
