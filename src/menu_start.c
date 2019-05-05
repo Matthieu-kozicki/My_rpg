@@ -70,7 +70,7 @@ void animation(game_t *game, object_t *obj)
         sfSprite_move(obj[1].spr, (sfVector2f){-4, 0});
         sfRenderWindow_drawSprite(game->window, obj[1].spr, NULL);
     }
-    else if (i < 241) {
+    else if (i < 242) {
         sfSprite_rotate(obj[0].spr, 3);
         sfSprite_rotate(obj[1].spr, -3);;
         sfSprite_move(obj[0].spr, (sfVector2f){4, 0});
