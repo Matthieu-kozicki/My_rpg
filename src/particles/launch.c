@@ -7,14 +7,16 @@
 
 #include "my_rpg.h"
 
-void particle_setparam(particle_t *particle, sfVector2f start, sfVector2f end, float spacing)
+void particle_setparam(particle_t *particle, sfVector2f start, sfVector2f end,
+                        float spacing)
 {
     particle->spacing = spacing;
     particle->pos[0] = start;
     particle->pos[1] = end;
 }
 
-void particle_launch(particle_t *particle, float speed, sfVector2f scale, float time)
+void particle_launch(particle_t *particle, float speed, sfVector2f scale,
+                    float time)
 {
     particle->speed = speed;
     particle->time = time;
@@ -71,7 +73,8 @@ void particle_update(particle_t *particle, sfClock *clock, float time)
             mutation(i, &tmp, particle);
             return;
         } else if (time >= particle->time) {
-            sfCircleShape_setPosition(particle->pixels[i], mvect(&tmp, particle, particle->spacing));
+            sfCircleShape_setPosition(particle->pixels[i], mvect(&tmp, particle,
+            particle->spacing));
             mutation(i, &tmp, particle);
             sfClock_restart(clock);
         }

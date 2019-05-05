@@ -23,11 +23,11 @@ void win_lose(game_t *game, object_t *obj)
     if (obj->quest <= 8)
         sfRenderWindow_drawSprite(game->window, obj[44].spr, NULL);
     else {
-       sfSprite_setPosition(game->combat->tmp2->spr->spr,
-       (sfVector2f){670, 450});
-       sfRenderWindow_drawSprite(game->window, obj[45].spr, NULL);
-       sfRenderWindow_drawSprite(game->window,
-       game->combat->tmp2->spr->spr, NULL);
+        sfSprite_setPosition(game->combat->tmp2->spr->spr,
+        (sfVector2f){670, 450});
+        sfRenderWindow_drawSprite(game->window, obj[45].spr, NULL);
+        sfRenderWindow_drawSprite(game->window,
+        game->combat->tmp2->spr->spr, NULL);
     }
 }
 

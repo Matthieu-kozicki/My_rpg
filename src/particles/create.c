@@ -35,7 +35,8 @@ void particle_draw(game_t *game, particle_t *particles)
     }
 }
 
-void particle_create(particle_t *particle, int size, enum type type, float radius)
+void particle_create(particle_t *particle, int size, enum type type,
+                    float radius)
 {
     particle->type = type;
     particle->size = size;
@@ -47,18 +48,19 @@ void particle_create(particle_t *particle, int size, enum type type, float radiu
         particle_getpoints(type));
         sfCircleShape_setFillColor(particle->pixels[i],
         particle_getcolor(type));
-        sfCircleShape_setPosition(particle->pixels[i], (sfVector2f){-99999, 99999});
+        sfCircleShape_setPosition(particle->pixels[i], (sfVector2f){-99999,
+        99999});
     }
     particle->started = 0;
 }
 
 void particle_end(particle_t *particle, int i, sfVector2f *tmp, sfColor *col)
 {
-    if (tmp->x >= particle->pos[1].x && tmp->x <= particle->pos[1].x + particle->size*4 &&
-    tmp->y <= particle->pos[1].y + particle->size*4 && tmp->y >= particle->pos[1].y) {
+    if (tmp->x >= particle->pos[1].x && tmp->x <= particle->pos[1].x +
+        particle->size*4 &&
+        tmp->y <= particle->pos[1].y + particle->size*4 && tmp->y >=
+        particle->pos[1].y)
         col->a = 0;
-    }
-    if (i == particle->size - 1 && col->a <= 0) {
+    if (i == particle->size - 1 && col->a <= 0)
         particle->started = 0;
-    }
 }

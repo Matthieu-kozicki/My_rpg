@@ -16,13 +16,14 @@ void attack(int attacker, game_t *game)
     if (attacker == 1) {
         game->combat->poke[0].stats[ACTUAL_HP] -=
         calculate_atk(attacker, game->combat);
-    } 
+    }
 }
 
 void draw_combat_sprites(sfRenderWindow *window, object_t *obj, game_t *game)
 {
     char *ppkminfo = malloc(sizeof(char) * 4 +
-    getmallocsize(game->combat->tmp2) + getmallocsize(&game->combat->poke[0]) + 1);
+    getmallocsize(game->combat->tmp2) +
+    getmallocsize(&game->combat->poke[0]) + 1);
 
     sfRenderWindow_drawSprite(window, obj[28].spr, NULL);
     sfRenderWindow_drawSprite(window, obj[29].spr, NULL);
@@ -80,7 +81,8 @@ void combat_loop(game_t *game, object_t *obj)
     move_cursor(game, obj);
     combat_ia(game, game->combat->difficulty);
     if (test > 100)
-        particle_update(&game->combat->particles[1], game->combat->clock[3], 0.001);
+        particle_update(&game->combat->particles[1], game->combat->clock[3],
+        0.001);
     particle_update(&game->combat->particles[0], game->combat->clock[4], 0.001);
     particle_draw(game, &game->combat->particles[1]);
     particle_draw(game, &game->combat->particles[0]);

@@ -7,7 +7,6 @@
 
 #include "my_rpg.h"
 
-
 void quest_next(game_t *game, object_t *obj)
 {
     if (game->pos_x == 28 && game->pos_y == 87
@@ -50,6 +49,7 @@ void play_quest(game_t *game, object_t *obj)
     quest_next(game, obj);
 
 }
+
 void play_game(game_t *game, object_t *obj)
 {
     game->time = sfClock_getElapsedTime(game->clock);

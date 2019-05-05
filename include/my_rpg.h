@@ -148,15 +148,18 @@ typedef struct button_s
 } button_t;
 
 //create.c
-void particle_create(particle_t *particle, int size, enum type type, float radius);
+void particle_create(particle_t *particle, int size, enum type type,
+float radius);
 void particle_draw(game_t *game, particle_t *particles);
 sfColor particle_getcolor(enum type type);
 int particle_getpoints(enum type type);
 void particle_end(particle_t *particle, int i, sfVector2f *tmp, sfColor *col);
 
 //launch.c
-void particle_setparam(particle_t *particle, sfVector2f start, sfVector2f end, float spacing);
-void particle_launch(particle_t *particle, float speed, sfVector2f scale, float time);
+void particle_setparam(particle_t *particle, sfVector2f start, sfVector2f end,
+float spacing);
+void particle_launch(particle_t *particle, float speed, sfVector2f scale,
+float time);
 void particle_update(particle_t *particle, sfClock *clock, float time);
 void mutation(int i, sfVector2f *pos, particle_t *particle);
 
@@ -200,6 +203,7 @@ int calculate_atk(int attacker, combat_t *combat);
 void combat_loop_next(game_t *game, object_t *obj);
 void draw_combat_texts(game_t *game);
 void set_combat_text(char *ehp, char *php, game_t *game);
+void create_spr_list_next(poke_t *tmp);
 
 //list.c
 poke_t *add_to_list(poke_t *list);
