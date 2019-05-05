@@ -34,6 +34,8 @@ void manage_events_2(game_t *game, object_t *obj, sfEvent event)
             sfClock_restart(game->clock_2);
         }
     }
+    if (game->screen == 4)
+        text_box_manager(game->cheatcode, game->window, &event);
 }
 
 void manage_events(game_t *game, object_t *obj)

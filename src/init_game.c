@@ -53,6 +53,8 @@ void init_game_variables2(game_t *game, object_t *obj)
     obj[1].quest = 1;
     game->buy = sfMusic_createFromFile("sound/money.ogg");
     init_keys(game);
+    game->cheatcode = malloc(sizeof(button_t));
+    create_text_box(game->cheatcode, (sfVector2f){0,0}, sfBlack);
 }
 
 void init_game_variables(game_t *game, object_t *obj)

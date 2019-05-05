@@ -35,6 +35,7 @@ SRC	=	src/main.c			\
 		src/particles/mutations.c	\
 		src/quest/quest.c		\
 		src/quest/int_to_char.c		\
+		src/textbox.c			\
 		src/shop/shopping.c		\
 		src/combat/check_win.c
 

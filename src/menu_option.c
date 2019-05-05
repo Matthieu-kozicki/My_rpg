@@ -33,6 +33,11 @@ void menu_option2(game_t *game, object_t *obj)
     sfRenderWindow_drawSprite(game->window, obj[23].spr, NULL);
     sfRenderWindow_drawSprite(game->window, obj[30].spr, NULL);
     keybinding(game, obj);
+    if (sfKeyboard_isKeyPressed(sfKeyMultiply)) {
+        sfText_setScale(game->cheatcode->text, (sfVector2f){1, 1});
+        sfRectangleShape_setScale(game->cheatcode->rect, (sfVector2f){1, 1});
+    }
+    draw_textbox(game);
     if (mouse_is_on(game, (sfVector2f){1480, 800}, 120, 100) == 1
     && obj->moused == 1)
         sfMusic_setVolume(game->music, 0);

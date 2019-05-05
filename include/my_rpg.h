@@ -98,6 +98,16 @@ typedef struct poke_s {
     struct poke_s *next;
 } poke_t;
 
+typedef struct button_s
+{
+    sfRectangleShape *rect;
+    sfFont *font;
+    sfText *text;
+    sfTexture *texture;
+    sfSprite *but;
+    char *but_text;
+} button_t;
+
 typedef struct combat_s {
     sfSprite *spr[2];
     sfText *texts[8];
@@ -146,17 +156,8 @@ typedef struct game_s {
     int pos_y;
     char stock;
     int inputs[4];
+    button_t *cheatcode;
 } game_t;
-
-typedef struct button_s
-{
-    sfRectangleShape *rect;
-    sfFont *font;
-    sfText *text;
-    sfTexture *texture;
-    sfSprite *but;
-    char *but_text;
-} button_t;
 
 //create.c
 void particle_create(particle_t *particle, int size, enum type type,
@@ -288,5 +289,11 @@ void pause_menu(game_t *game, object_t *obj);
 
 //play_game.c
 void play_game(game_t *game, object_t *obj);
+
+//textbox.c
+void create_text_box(button_t *new, sfVector2f position, sfColor color);
+int textbox_is_focused(button_t *button, sfVector2i click_position);
+void text_box_manager(button_t *box, sfRenderWindow *window, sfEvent *event);
+void draw_textbox(game_t *game);
 
 #endif
